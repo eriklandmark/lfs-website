@@ -15,4 +15,4 @@ COPY .env /.env
 
 RUN npm run build
 
-CMD serve dist
+CMD serve
