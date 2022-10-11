@@ -14,4 +14,4 @@ COPY babel.config.js /babel.config.js
 
 RUN npm run build
 
-CMD serve dist
+CMD serve
