@@ -1,0 +1,7 @@
+services:
+    web:
+        extends:
+            file: docker-compose.yml
+            service: web
+        ports:
+            - "3001:3000"
