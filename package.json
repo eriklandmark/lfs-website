@@ -1,12 +1,13 @@
 {
     "name": "lfs-website",
-    "version": "0.1.0",
-    "author": "Erik Landmark",
-    "description": "LFS Website",
+    "version": "1.0.0",
     "private": true,
+    "description": "LFS Website",
+    "author": "Erik Landmark",
     "scripts": {
         "serve": "vue-cli-service serve",
-        "build": "vue-cli-service build"
+        "build": "vue-cli-service build",
+        "i18n:report": "vue-cli-service i18n:report --src \"./src/**/*.?(js|vue)\" --locales \"./src/locales/**/*.json\""
     },
     "dependencies": {
         "@babel/polyfill": "^7.4.4",
@@ -15,22 +16,24 @@
         "@vue/cli-plugin-router": "^5.0.8",
         "@vue/cli-plugin-typescript": "^5.0.8",
         "@vue/cli-service": "^5.0.8",
-        "core-js": "^3.25.2",
+        "core-js": "^3.25.5",
         "grapesjs": "^0.20.1",
         "grapesjs-preset-webpage": "^1.0.2",
         "register-service-worker": "^1.7.2",
         "sass": "^1.55.0",
         "sass-loader": "^13.1.0",
-        "typescript": "^4.8.3",
-        "vue": "^2.7.10",
+        "typescript": "^4.8.4",
+        "vue": "^2.7.13",
         "vue-class-component": "^7.2.6",
         "vue-cli-plugin-pug": "^2.0.0",
         "vue-cli-plugin-vuetify": "~2.5.8",
         "vue-gtag": "^1.16.1",
+        "vue-i18n": "^8.27.2",
         "vue-property-decorator": "^9.1.2",
         "vue-router": "^3.6.5",
-        "vue-template-compiler": "^2.7.10",
-        "vuetify": "^2.6.0"
+        "vue-template-compiler": "^2.7.13",
+        "vuetify": "^2.6.12",
+        "vue-cli-plugin-i18n": "^2.3.1"
     },
     "browserslist": [
         "> 1%",

@@ -1,0 +1,91 @@
+{
+    "main_title_tabs": {
+        "home_tab": "Hem",
+        "about_tab": "Om Oss",
+        "contact_tab": "Kontakt oss",
+        "recruitment_tab": "Rekrytering"
+    },
+    "footer": {
+        "about_us_title": "Om Oss",
+        "about_us_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam aliquam.",
+        "contact_title": "Kontakt oss",
+        "credits_title": "Krediter"
+    },
+    "home": {
+        "read_more_text": "Läs mer",
+        "about_section": {
+            "title": "Om Oss",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc."
+        },
+        "contact_section": {
+            "title": "Konakt oss",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc."
+        },
+        "partners_section": {
+            "title": "Våra partners",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc."
+        }
+    },
+    "about": {
+        "title": "Om Oss",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc.",
+        "history": {
+            "title": "Historia",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc."
+        },
+        "team": {
+            "title": "Träffa lagen",
+            "titles": {
+                "project-leader": "Projekledare",
+                "technical-leader": "Teknikledare",
+                "team-leader": "Lagledare",
+                "team-member": "Lagmedlem"
+            },
+            "board": {
+                "title": "Styrelsen",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc."
+            },
+            "administration": {
+                "title": "Administration",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc."
+            },
+            "aerodynamics": {
+                "title": "Aerodynamik",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc."
+            },
+            "chassis": {
+                "title": "Chassi",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc."
+            },
+            "power-train": {
+                "title": "Drivlina",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc."
+            },
+            "vehicle-dynamics": {
+                "title": "Fordonsdynamik",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc."
+            },
+            "low-voltage": {
+                "title": "Lågspänning",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc."
+            }
+        }
+    },
+    "contact": {
+        "reach_us": "Du kan nå oss",
+        "social_media": "Sociala medier",
+        "contact_form": {
+            "title": "Kontaktformulär",
+            "name": "Namn",
+            "email": "E-post",
+            "subject": "Ämne",
+            "message": "Meddelande",
+            "send": "Skicka"
+        }
+    },
+    "recruitment": {
+        "title": "Rekrytering",
+        "description": "Nedan hittar du ett formulär för att ansöka till en eller flera utav rollerna. Har du några funderingar kring ansökningen går det självklart bra att kontakta oss. Vi söker just nu de följande rollerna",
+        "roll_description": "(Du kan klicka på varje roll för att komma vidare till en mer detaljerad beskrivning av rollen.)"
+    }
+}
