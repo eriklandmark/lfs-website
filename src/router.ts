@@ -4,6 +4,9 @@ import HomeView from '@/views/HomeView.vue'
 import DevView from "@/views/Dev.vue";
 import AboutView from "@/views/AboutView.vue";
 import ContactView from "@/views/ContactView.vue";
+import PrivacyPolicyView from "@/views/PrivacyPolicyView.vue";
+import NotFoundView from "@/views/NotFoundView.vue";
+import RecruitmentView from "@/views/RecruitmentView.vue";
 
 Vue.use(VueRouter)
 
@@ -28,6 +31,21 @@ const routes: Array<RouteConfig> = [
         name: 'dev',
         component: DevView
     },
+    {
+        path: '/privacy-policy',
+        name: 'privacy-policy',
+        component: PrivacyPolicyView
+    },
+    {
+        path: '/recruitment',
+        name: 'recruitment',
+        component: RecruitmentView
+    },
+    {
+        path: '/*',
+        name: 'not-found',
+        component: NotFoundView
+    }
 ]
 
 const router = new VueRouter({

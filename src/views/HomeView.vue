@@ -22,20 +22,28 @@
         v-container
             v-row.my-16(align="center" )
                 v-col(cols="12" md="6")
-                    h1 Om Oss
-                    span Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc.
+                    h1 {{$t('home.about_section.title')}}
+                    span {{$t('home.about_section.description')}}
                     br
-                    v-btn.mt-8(color="accent" dark large to="/about") Läs mer
+                    v-btn.mt-8(color="accent" dark large to="/about") {{$t('home.read_more_text')}}
                 v-col(cols="12" md="6")
                     v-img(src="/images/cars/car-side.svg" contain alt="LFS car from side." max-height="30vh")
             v-row.my-16(align="center" )
                 v-col(cols="12" md="6")
                     v-img(src="/images/cars/car-front.svg" contain alt="LFS car from the front." max-height="30vh" )
                 v-col(cols="12" md="6")
-                    h1 Partners
-                    span Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc.
+                    h1 {{$t('home.contact_section.title')}}
+                    span {{$t('home.contact_section.description')}}
                     br
-                    v-btn.mt-8(color="accent" dark large to="/partners" ) Läs mer
+                    v-btn.mt-8(color="accent" dark large to="/contact" ) {{$t('home.read_more_text')}}
+            v-row.my-16(align="center" )
+                v-col(cols="12" md="6")
+                    h1 {{$t('home.partners_section.title')}}
+                    span {{$t('home.partners_section.description')}}
+                    br
+                    v-btn.mt-8(color="accent" dark large to="/partners" ) {{$t('home.read_more_text')}}
+                v-col(cols="12" md="6")
+                    v-img(src="/images/cars/car-top.svg" contain alt="LFS car from the front." max-height="30vh" )
 </template>
 
 <script lang="ts">
