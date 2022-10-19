@@ -2,9 +2,10 @@ FROM node:lts
 
 WORKDIR /
 
+RUN npm install --global serve
+
 COPY package.json .
 RUN npm install
-RUN npm install --global serve
 
 COPY public /public
 COPY src /src
