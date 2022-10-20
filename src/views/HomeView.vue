@@ -55,14 +55,15 @@
                     br
                     v-btn.mt-8(color="accent" dark large to="/contact" ) {{$t('home.read_more_text')}}
             v-row.my-16(justify="center")
-                v-card
-                    v-card-text
-                        iframe(src='https://calendar.google.com/calendar/embed?height=600&wkst=2&bgcolor=%23ffffff&ctz=Europe%2FBerlin&showNav=1&showTitle=0&showTz=0&showCalendars=0&showTabs=0&showPrint=0&showDate=1&mode=WEEK&src=Y2MzZjJiYzRhOTY5N2M5OGQ4MzIxYjVmN2FkMDIxYTBiMThmZTNkZjkzZGIyMjhkZDQwMDc1ZmQ2ZjdlZGE3MkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23A79B8E'
-                            style='border-width:0'
-                            width='800'
-                            height='600'
-                            frameborder='0'
-                            scrolling='no')
+                v-col(cols="12" md="12")
+                    v-card(width="100%" )
+                        v-card-text
+                            iframe(src='https://calendar.google.com/calendar/embed?height=600&wkst=2&bgcolor=%23ffffff&ctz=Europe%2FBerlin&showNav=1&showTitle=0&showTz=0&showCalendars=0&showTabs=0&showPrint=0&showDate=1&mode=WEEK&src=Y2MzZjJiYzRhOTY5N2M5OGQ4MzIxYjVmN2FkMDIxYTBiMThmZTNkZjkzZGIyMjhkZDQwMDc1ZmQ2ZjdlZGE3MkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23A79B8E'
+                                style='border-width:0'
+                                width='100%'
+                                height='600'
+                                frameborder='0'
+                                scrolling='no')
 
 </template>
 
