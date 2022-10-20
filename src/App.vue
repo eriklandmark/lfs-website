@@ -88,27 +88,29 @@
         v-footer(app dark color="primary" min-height="250" absolute)
             v-container.mt-8
                 v-row
-                    v-col(cols="12" md="3")
+                    v-col(cols="12" md="4")
                         v-img(src="/images/logos/logo-dark.png" contain alt="LFS Logo")
-                    v-col(cols="12" md="3")
-                        h3 {{ $t("footer.about_us_title") }}
-                        span {{ $t("footer.about_us_text") }}
-                    v-col(cols="12" md="3")
-                        h3 {{ $t("footer.contact_title") }}
+                    v-col(cols="12" md="4")
+                        h3 {{ $t("footer.resources_title") }}
                         span Mail:
                             a.ml-1(href="mailto:info@luleafs.se" style="color: white") info@luleafs.se
                         br
                         span Mobil:
                             a.ml-1(href="tel:+46700000000" style="color: white") 0700-000 000
-
-                    v-col(cols="12" md="3")
-                        h3 {{ $t("footer.credits_title") }}
-                        a(href="https://www.vecteezy.com/free-vector/icons" style="color: white") Icons Vectors by Vecteezy
                         br
                         router-link(to="/privacy-policy" style="color: white") Privacy Policy
 
+                    v-col(cols="12" md="4")
+                        h3 {{ $t("footer.credits_title") }}
+                        a(href="https://www.vecteezy.com/free-vector/icons" style="color: white") Icons Vectors by Vecteezy
+
+                        br
+                        a(href="https://rejsa.nu/forum/viewtopic.php?t=28732" target="_blank" style="color: white") Images of formula cars | Mikael Larsson 2006
+
                 v-row.mt-4(align="center" justify="center")
-                    span © 2022 Luleå Formula Student | Version {{ version }}
+                    span(style="text-align: center") © 2022 Luleå Formula Student (LFS)
+                        wbr
+                        | | Version {{ version }}
 
 </template>
 

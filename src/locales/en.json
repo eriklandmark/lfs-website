@@ -6,32 +6,21 @@
         "recruitment_tab": "Recruitment"
     },
     "footer": {
-        "about_us_title": "About Us",
-        "about_us_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam aliquam.",
-        "contact_title": "Contact us",
         "credits_title": "Credits"
     },
     "home": {
         "read_more_text": "Read more",
         "about_section": {
-            "title": "About",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc."
+            "title": "About"
         },
         "contact_section": {
-            "title": "Contact us",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc."
-        },
-        "partners_section": {
-            "title": "Our partners",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc."
+            "title": "Contact us"
         }
     },
     "about": {
         "title": "About us",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc.",
         "history": {
-            "title": "History",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc."
+            "title": "History"
         },
         "team": {
             "title": "Meet the teams",
@@ -42,45 +31,30 @@
                 "team-member": "Team Member"
             },
             "board": {
-                "title": "Board",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc."
+                "title": "Board"
             },
             "administration": {
                 "title": "Administration",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc."
-            },
-            "aerodynamics": {
-                "title": "Aerodynamics",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc."
-            },
-            "chassis": {
-                "title": "Chassis",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc."
-            },
-            "power-train": {
-                "title": "Power train",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc."
-            },
-            "vehicle-dynamics": {
-                "title": "Vehicle dynamics",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc."
-            },
-            "low-voltage": {
-                "title": "Low voltage",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc."
+                "aerodynamics": {
+                    "title": "Aerodynamics"
+                },
+                "chassis": {
+                    "title": "Chassis"
+                },
+                "power-train": {
+                    "title": "Power train"
+                },
+                "vehicle-dynamics": {
+                    "title": "Vehicle dynamics"
+                },
+                "low-voltage": {
+                    "title": "Low voltage"
+                }
             }
         }
     },
     "contact": {
         "reach_us": "You can reach us at",
-        "social_media": "Social media",
-        "contact_form": {
-            "title": "Contact form",
-            "name": "Name",
-            "email": "Email",
-            "subject": "Subject",
-            "message": "Message",
-            "send": "Send"
-        }
+        "social_media": "Social media"
     }
 }

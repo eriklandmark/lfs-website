@@ -1,7 +1,7 @@
 <template lang="pug">
     .contact-view
         v-container
-            v-row.my-16(align="center" )
+            v-row.my-8(align="center" justify="center" )
                 v-col(cols="12" md="6")
                     h2 {{$t('contact.reach_us')}}
                     v-list
@@ -15,11 +15,14 @@
                             v-list-item-icon
                                 v-icon(large) mdi-phone
                             v-list-item-content
+                                v-list-item-subtitle {{$t('contact.phone-number')}}
                                 v-list-item-title +46 00 000 0000
+
                         v-list-item
                             v-list-item-icon
                                 v-icon(large) mdi-email
                             v-list-item-content
+                                v-list-item-subtitle {{$t('contact.email')}}
                                 v-list-item-title
                                     a(href="mailto:info@luleafs.se") info@luleafs.se
                 v-col(cols="12" md="6")
@@ -40,16 +43,20 @@
                                 v-icon(large) mdi-linkedin
                             v-list-item-content
                                 a(href="https://www.linkedin.com/company/lule%C3%A5-formula-student/about/" target="_blank") LFS Luleå Formula Student
+            h2.mb-5 {{$t('contact.contact_board')}}
+            v-row.mb-8
+                v-col(v-for="member in board" cols="12" md="4" :key="member.name")
+                    v-card
+                        v-card-title {{member.title}}:
+                        v-card-subtitle {{member.name}}
+                        v-card-text.pb-9(style="")
+                            span(style="float:left") {{$t('contact.phone-number')}}
+                            wbr
+                            a.ml-1(href="tel:+46700000000" style=style = "float: right") +4670 00 00 000
+                            br
+                            span(style="float:left") {{$t('contact.email')}}
+                            a.ml-1(href="mailto:info@luleafs.se" style="float: right") info@luleafs.se
 
-            v-row.my-16(align="center")
-                v-col(cols="12")
-                    h2.mb-4 {{$t('contact.contact_form.title')}}
-                    v-form
-                        v-text-field(:label="$t('contact.contact_form.name')" outlined color="accent" )
-                        v-text-field(:label="$t('contact.contact_form.email')" outlined color="accent")
-                        v-text-field(:label="$t('contact.contact_form.subject')" outlined color="accent")
-                        v-textarea(:label="$t('contact.contact_form.message')" outlined color="accent")
-                        v-btn(color="accent") {{$t('contact.contact_form.send')}}
 
 </template>
 
@@ -60,7 +67,39 @@ import {Component, Vue} from 'vue-property-decorator';
     components: {},
 })
 export default class ContactView extends Vue {
-
+    board = [
+        {
+            name: "Jacob Höglund",
+            title: this.$t("about.team.titles.project-leader").toString(),
+        },
+        {
+            name: "Samuel Höglund",
+            title: this.$t("about.team.titles.technical-leader").toString(),
+        },
+        {
+            name: "Erik Landmark",
+            title: this.$t("about.team.titles.technical-leader").toString(),
+        },
+        {
+            name: "Max Wiberg",
+            title: `${this.$t("about.team.titles.team-leader").toString()} - ${this.$t("about.team.administration.title").toString()}`,
+        },
+        {
+            name: "Fabian Dalenius",
+            title: `${this.$t("about.team.titles.team-leader").toString()} - ${this.$t("about.team.aerodynamics.title").toString()}`,
+        },
+        {
+            name: "Louise Lööf",
+            title: `${this.$t("about.team.titles.team-leader").toString()} - ${this.$t("about.team.chassis.title").toString()}`,
+        },
+        {
+            name: "Alec Berkien",
+            title: `${this.$t("about.team.titles.team-leader").toString()} - ${this.$t("about.team.vehicle-dynamics.title").toString()}`,
+        },
+        {
+            name: "David Englund",
+            title: `${this.$t("about.team.titles.team-leader").toString()} - ${this.$t("about.team.power-train.title").toString()}`,
+        }]
 }
 </script>
 

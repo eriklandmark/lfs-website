@@ -1,12 +1,12 @@
 <template lang="pug">
     .home
         v-container
-            v-row.my-16(align="center" )
+            v-row.my-8(align="center" )
                 v-col(cols="12" md="12")
                     h1 {{ $t('about.title') }}
                     span {{$t('about.description')}}
 
-            v-row.mt-16.mb-4.mtt-title
+            v-row.my-8.mb-4.mtt-title
                 v-col
                     h1 {{$t('about.team.title')}}
 
@@ -21,27 +21,66 @@
                                 v-card(flat)
                                     v-card-title.font-weight-bold {{ team.title }}
                                     v-card-text(style="color: black !important") {{team.about}}
-                                    v-card-text(style="color: black !important")
-                                        .avatars
-                                            .avatar(v-for="member in team.members" :key="member.name")
-                                                v-img(v-if="member.avatar !== 'none'"
-                                                    :src="member.avatar"
-                                                    :alt="member.name"
-                                                    width="180"
-                                                    height="200px"
-                                                    contain)
-                                                .none-avatar(v-else)
-                                                    v-icon(x-large) mdi-account
-                                                .ml-1.mt-2
-                                                    span.font-weight-bold(style="font-size: 1.2em;") {{ member.name }}
-                                                    br
-                                                    span(style="font-size: 1.1em;") {{ member.title }}
+                                    .avatars.my-6.mx-4
+                                        .avatar(v-for="member in team.members" :key="member.name")
+                                            v-img(v-if="member.avatar !== 'none'"
+                                                :src="member.avatar"
+                                                :alt="member.name"
+                                                width="180"
+                                                height="200px"
+                                                contain)
+                                            .none-avatar(v-else)
+                                                v-icon(x-large) mdi-account
+                                            .ml-1.mt-2
+                                                span.font-weight-bold(style="font-size: 1.2em;") {{ member.name }}
+                                                br
+                                                span(style="font-size: 1.1em;") {{ member.title }}
 
-            v-row.my-16(align="center" )
+            v-row.my-8(align="center" )
                 v-col(cols="12" md="12")
                     h1 {{$t('about.history.title')}}
                     span {{$t('about.history.description')}}
+                    v-timeline(:dense='$vuetify.breakpoint.smAndDown')
+                        v-timeline-item(color='accent' fill-dot left)
+                            template(v-slot:opposite)
+                                h3 {{ $t('about.history.2022_autumn.title') }}
+                            v-card
+                                v-card-text(style="color: black !important") {{ $t('about.history.2022_autumn.description') }}
+                        v-timeline-item(color='accent' fill-dot right)
+                            template(v-slot:opposite)
+                                h3 {{ $t('about.history.2022_summer.title') }}
+                            v-card
+                                v-card-text(style="color: black !important") {{ $t('about.history.2022_summer.description') }}
+                        v-timeline-item(color='accent' fill-dot left)
+                            template(v-slot:opposite)
+                                h3 {{ $t('about.history.before_2022.title') }}
+                            v-card
+                                v-card-text
+                                    v-img(src="/images/cars/car-empty.jpg" contain alt="" max-height="250px")
+                                v-card-text(style="color: black !important") {{ $t('about.history.before_2022.description') }}
+                                v-card-text(style="color: black !important")
+                                    span.font-weight-bold {{ $t('about.history.car_specs.title') }}
+                                    br
+                                    span {{ $t('about.history.car_specs.weight', {weight: 195.5}) }}
+                                    br
+                                    span {{ $t('about.history.car_specs.engine', {engine: "Yamaha YXFR6"}) }}
+                                    br
+                                    span {{ $t('about.history.car_specs.hp', {hp: 98}) }}
+                                    br
+                                    span {{ $t('about.history.car_specs.torque', {torque: 68}) }}
+                                    br
+                                    span {{ $t('about.history.car_specs.zeroToHundred', {zeroToHundred: 3.6}) }}
+                                    br
+                                    span {{ $t('about.history.car_specs.topSpeed', {topSpeed: 135}) }}
+                                    br
 
+            v-row
+                v-row.my-16(align="center" )
+                    v-col(cols="8" md="8")
+                        h1.mb-4 {{$t('about.links.title')}}
+                        ul
+                            li(v-for="link in links" :key="link.title")
+                                a(:href="link.href" target="_blank") {{ link.title }}
 
 </template>
 
@@ -55,8 +94,19 @@ export default class AboutView extends Vue {
 
     tab = "board";
 
+    links = [
+        {
+            title: "https://www.nyteknik.se/fordon/studenter-start-your-engines-6413179",
+            href: "https://www.nyteknik.se/fordon/studenter-start-your-engines-6413179"
+        },
+        {
+            title: "https://rejsa.nu/forum/viewtopic.php?t=28732",
+            href: "https://rejsa.nu/forum/viewtopic.php?t=28732"
+        }
+    ]
+
     mounted() {
-        if(this.$route.query.hasOwnProperty("tab")) {
+        if (this.$route.query.hasOwnProperty("tab")) {
             this.tab = this.$route.query.tab.toString()
             this.$vuetify.goTo(".mtt-title")
         }

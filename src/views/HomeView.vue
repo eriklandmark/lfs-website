@@ -2,25 +2,43 @@
     .home
         v-carousel(
             v-model='carousel_model'
-            height="calc(100vh - 100px)"
-            cycle
+            :height="$vuetify.breakpoint.smAndDown? 'calc(100vh - 56px)': 'calc(100vh - 100px)'"
+
             hide-delimiter-background
             show-arrows-on-hover)
             v-carousel-item()
-                v-sheet(color="blue" height='100%')
-                    .carousel-content
-                        span Slide 1
+                v-card(height='100%' flat :rounded="false")
+                    v-img(href="/cars/" src="/images/cars/car-racing-side-whole.jpg" height='100%'
+                        alt="Images of formula cars | Mikael Larsson 2006")
+                        v-sheet(style="background: rgba(3, 32, 64, 0.8)" height="100%" )
+                            v-container.fill-height
+                                v-row.my-16(align="center" justify="end" )
+                                    v-col(cols="12" md="6")
+                                        v-sheet(color="transparent" dark)
+                                            v-card-title(style="font-size: 2em").font-weight-bold {{$t('home.recruit_section.title')}}
+                                            v-card-text(style="font-size: 1.2em") {{$t('home.recruit_section.description')}}
+                                            v-card-actions.align-center
+                                                v-spacer
+                                                v-btn.mt-8(color="primary" dark large to="/recruitment") {{$t('home.read_more_text')}}
+                                                v-spacer
             v-carousel-item()
-                v-sheet(color="green" height='100%')
-                    .carousel-content
-                        span Slide 2
-            v-carousel-item()
-                v-sheet(color="red" height='100%')
-                    .carousel-content
-                        span Slide 3
+                v-card(height='100%' flat :rounded="false")
+                    v-img(href="/cars/" src="/images/cars/car-racing-side.jpg" height='100%'
+                        alt="Images of LTU formula cars | Mikael Larsson 2006")
+                        v-sheet(style="background: rgba(3, 32, 64, 0.8)" height="100%" )
+                            v-container.fill-height
+                                v-row.my-16(align="center" justify="end" )
+                                    v-col(cols="12" md="6")
+                                        v-sheet(color="transparent" dark)
+                                            v-card-title(style="font-size: 2em").font-weight-bold {{$t('home.started_section.title')}}
+                                            v-card-text(style="font-size: 1.2em") {{$t('home.started_section.description')}}
+                                            v-card-actions.align-center
+                                                v-spacer
+                                                v-btn.mt-8(color="primary" dark large to="/about") {{$t('home.read_more_text')}}
+                                                v-spacer
 
         v-container
-            v-row.my-16(align="center" )
+            v-row.my-16(align="center")
                 v-col(cols="12" md="6")
                     h1 {{$t('home.about_section.title')}}
                     span {{$t('home.about_section.description')}}
@@ -28,7 +46,7 @@
                     v-btn.mt-8(color="accent" dark large to="/about") {{$t('home.read_more_text')}}
                 v-col(cols="12" md="6")
                     v-img(src="/images/cars/car-side.svg" contain alt="LFS car from side." max-height="30vh")
-            v-row.my-16(align="center" )
+            v-row.my-16(align="center")
                 v-col(cols="12" md="6")
                     v-img(src="/images/cars/car-front.svg" contain alt="LFS car from the front." max-height="30vh" )
                 v-col(cols="12" md="6")
@@ -36,14 +54,16 @@
                     span {{$t('home.contact_section.description')}}
                     br
                     v-btn.mt-8(color="accent" dark large to="/contact" ) {{$t('home.read_more_text')}}
-            v-row.my-16(align="center" )
-                v-col(cols="12" md="6")
-                    h1 {{$t('home.partners_section.title')}}
-                    span {{$t('home.partners_section.description')}}
-                    br
-                    v-btn.mt-8(color="accent" dark large to="/partners" ) {{$t('home.read_more_text')}}
-                v-col(cols="12" md="6")
-                    v-img(src="/images/cars/car-top.svg" contain alt="LFS car from the front." max-height="30vh" )
+            v-row.my-16(justify="center")
+                v-card
+                    v-card-text
+                        iframe(src='https://calendar.google.com/calendar/embed?height=600&wkst=2&bgcolor=%23ffffff&ctz=Europe%2FBerlin&showNav=1&showTitle=0&showTz=0&showCalendars=0&showTabs=0&showPrint=0&showDate=1&mode=WEEK&src=Y2MzZjJiYzRhOTY5N2M5OGQ4MzIxYjVmN2FkMDIxYTBiMThmZTNkZjkzZGIyMjhkZDQwMDc1ZmQ2ZjdlZGE3MkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23A79B8E'
+                            style='border-width:0'
+                            width='800'
+                            height='600'
+                            frameborder='0'
+                            scrolling='no')
+
 </template>
 
 <script lang="ts">

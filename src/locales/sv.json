@@ -6,32 +6,56 @@
         "recruitment_tab": "Rekrytering"
     },
     "footer": {
-        "about_us_title": "Om Oss",
-        "about_us_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam aliquam.",
-        "contact_title": "Kontakt oss",
+        "resources_title": "Resurser",
         "credits_title": "Krediter"
     },
     "home": {
         "read_more_text": "Läs mer",
+        "recruit_section": {
+            "title": "Vi rekryterar!",
+            "description": "Vi rektryterar nya lagmedlemmar och lagledare! Om du är intresserad av att bli en del av vårt lag, sök till oss genom att klicka på knappen nedan!"
+        },
+        "started_section": {
+            "title": "Nu är vi igång!",
+            "description": "Nu har vi äntligen kommit igång och vi hoppas att ni vill vara med på vår resa! Kolla gärna in våra sociala kanaler för att hålla er uppdaterade med allt som händer i LFS."
+        },
         "about_section": {
             "title": "Om Oss",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc."
+            "description": "Vi är Luleå Formula Student och vi arbetar aktivit med att uteckla och ta fram en tävlingsbar formelbil, där vårt fokus ligger på att både utveckla en bil samtidigt utveckla oss själva som blivande ingenjörer. Klicka gärna på knappen nedan för att läsa mer om oss."
         },
         "contact_section": {
-            "title": "Konakt oss",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc."
-        },
-        "partners_section": {
-            "title": "Våra partners",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc."
+            "title": "Kontakta oss",
+            "description": "För att hitta information om hur du vill kontakta oss klicka på knappen nedan. Vi svarar gärna och så fort vi kan."
         }
     },
     "about": {
         "title": "Om Oss",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc.",
+        "description": "Luleå Formula Student är en nystartad förening som har som mål att skapa och utveckla en formelbil som ska delta i olika tävlingar runt om i världen.",
         "history": {
             "title": "Historia",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc."
+            "description": "",
+            "car_specs": {
+                "title": "Bilens specifikationer:",
+                "weight": "Vikt: {weight} kg",
+                "engine": "Motor: {engine}",
+                "hp": "Hästkrafter: {hp} hp",
+                "power": "Effekt: {power} kW",
+                "torque": "Vridmoment: {torque} Nm",
+                "zeroToHundred": "0-100 km/h: {zeroToHundred} sekunder",
+                "topSpeed": "Toppfart: {topSpeed} km/h"
+            },
+            "before_2022": {
+                "title": "Före 2022",
+                "description": "Innan 2022 fanns projektet på skolan under ett antal år men hade sitt sista år 2008. Bilen på bilden åvan och specifiktationerna nedan är för 2006 års bil. Sedan dess har inte något lag på LTU tävlat i Formula Student."
+            },
+            "2022_summer": {
+                "title": "Sommaren 2022",
+                "description": "Innan sommaren kände en grupp studenter att det var tråkigt att det inte fanns något formelbilsprojekt på LTU. Därför bestämde de sig för att starta upp ett nytt projektförening och nu är vi igång!"
+            },
+            "2022_autumn": {
+                "title": "Hösten 2022",
+                "description": "Under hösten skapades föreningen och på första årsmötet röstades in en ny styrelse med 8 st och med hjälp av 24 st medlemmar ska de nu ta fram och utveckla en bil som ska tävla i Formula Student."
+            }
         },
         "team": {
             "title": "Träffa lagen",
@@ -43,45 +67,43 @@
             },
             "board": {
                 "title": "Styrelsen",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc."
+                "description": "Tillsammans med lagen ansvarar styrelsen för att föreningen ska fungera och utvecklas. Styrelsen består av 9 personer som är valda av föreningens medlemmar och består av en projektledare, 2 st teknikledare och lagledare för varje lag. Styrelsen är föreningens högsta beslutande organ och ansvarar för att föreningen följer stadgarna och lagar. Styrelsen är också ansvarig för att föreningen har en god ekonomi och att föreningen har en god ekonomisk ställning."
             },
             "administration": {
                 "title": "Administration",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc."
+                "description": "Administrationen är en del av föreningen som arbetar med att sköte föreningens ekonomi och administration. Tillsammans med styrelsen är administrationslaget ansiktet utåt för föreningen, sköter PR, sociala medier och sponsorkontakt. Administration är också ansvariga för att planera och genomföra föreningens evenemang. Även om inte administrationslaget jobbar på någon utveckling av bilen är de yttersviktiga för att föreningen ska fungera."
             },
             "aerodynamics": {
                 "title": "Aerodynamik",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc."
+                "description": "Aerodynamiklaget ansvarar över lag för strömmande luft runt bilen kan nyttjas på bästa sätt. Exempelvis hur man kan använda luft för att förbättra förmågan att svänga i tajta kurvor och hur luft kan användas för att kyla för varma komponenter i bilen."
             },
             "chassis": {
                 "title": "Chassi",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc."
+                "description": "Chassilaget jobbar med att utveckla bilens ram och strukter, även en hel del inom säkerhet och ergonomi för föraren. Chassilaget ansvarar för att bilen ska vara så stark och hållbar som möjligt samtidigt så lätt som möjligt. Chassilaget är också ansvariga för att integrera alla lagens olika komponenter i bilen för att i slutändan få byggt en bil."
             },
             "power-train": {
                 "title": "Drivlina",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc."
-            },
+                "description": "Drivlinan är det som gör att bilen kan röra sig framåt. Drivlinan behandlar alla kompoeneter som får den lagrade energin i bilen till att generera en kraft mot vägen som får bilen att köra frammåt."
+             },
             "vehicle-dynamics": {
                 "title": "Fordonsdynamik",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc."
-            },
+                "description": "Fordonsdynamiklaget beaktar de dynamiska krafterna och yttre förhållandenen på bilen. Fordonsdynamiklaget ansvarar för att bilen ska kunna svänga och bromsa på ett säkert sätt. Fordonsdynamiklaget är också ansvariga för att bilen ska kunna hålla sig på vägen och inte kippa över."
+              },
             "low-voltage": {
                 "title": "Lågspänning",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet nunc."
-            }
+                "description": "Lågspänninglaget ansvarar för att utveckla och integrera alla elektroniska komponenter i bilen. Lågspänninglaget är också ansvariga för att bilen ska kunna kommunicera med omvärlden och för att bilen ska kunna mäta och rapportera data om bilens prestanda."
+             }
+        },
+        "links": {
+            "title": "Läsbara länkar"
         }
     },
     "contact": {
         "reach_us": "Du kan nå oss",
         "social_media": "Sociala medier",
-        "contact_form": {
-            "title": "Kontaktformulär",
-            "name": "Namn",
-            "email": "E-post",
-            "subject": "Ämne",
-            "message": "Meddelande",
-            "send": "Skicka"
-        }
+        "contact_board": "Kontakta någon i styrelsen",
+        "email": "E-post: ",
+        "phone-number": "Telefonnummer: "
     },
     "recruitment": {
         "title": "Rekrytering",
