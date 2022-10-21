@@ -7,6 +7,7 @@ import ContactView from "@/views/ContactView.vue";
 import PrivacyPolicyView from "@/views/PrivacyPolicyView.vue";
 import NotFoundView from "@/views/NotFoundView.vue";
 import RecruitmentView from "@/views/RecruitmentView.vue";
+import SearchView from "@/views/SearchView.vue";
 
 Vue.use(VueRouter)
 
@@ -14,37 +15,66 @@ const routes: Array<RouteConfig> = [
     {
         path: '/',
         name: 'home',
-        component: HomeView
+        component: HomeView,
+        meta: {
+            title: 'Home'
+        }
     },
     {
         path: '/about',
         name: 'about',
-        component: AboutView
+        component: AboutView,
+        meta: {
+            title: 'About'
+        }
     },
     {
         path: '/contact',
         name: 'contact',
-        component: ContactView
+        component: ContactView,
+        meta: {
+            title: 'Contact'
+        }
     },
     {
         path: '/dev',
         name: 'dev',
-        component: DevView
+        component: DevView,
+        meta: {
+            title: 'Dev'
+        }
     },
     {
         path: '/privacy-policy',
         name: 'privacy-policy',
-        component: PrivacyPolicyView
+        component: PrivacyPolicyView,
+        meta: {
+            title: 'Privacy Policy'
+        }
     },
     {
         path: '/recruitment',
         name: 'recruitment',
-        component: RecruitmentView
+        component: RecruitmentView,
+        meta: {
+            title: 'Recruitment'
+        }
+    },
+    {
+        path: '/search',
+        name: 'search',
+        component: SearchView,
+        meta: {
+            title: 'Search'
+        }
     },
     {
         path: '/*',
         name: 'not-found',
-        component: NotFoundView
+        component: NotFoundView,
+        meta: {
+            title: '404 - Not Found'
+        }
     }
 ]
 
@@ -54,9 +84,12 @@ const router = new VueRouter({
     routes
 })
 
-router.beforeEach((to, from, next) => {
-    window.scrollTo(0, 0)
-    next()
-})
+router.afterEach((to, from) => {
+    Vue.nextTick(() => {
+        if (to.meta && to.meta.title) {
+            document.title = to.meta.title + "- LFS"
+        }
+    });
+});
 
 export default router

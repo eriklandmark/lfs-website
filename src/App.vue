@@ -3,17 +3,18 @@
         v-app-bar(app
         color="white"
             :height="$vuetify.breakpoint.mdAndUp? 100:56"
-            :extension-height="show_search ? 100 : 0"
+            :extension-height="search_store.show_search ? 100 : 0"
             extension-transition="fade-transition"
-            :extended="show_search")
+            :extended="search_store.show_search")
             v-app-bar-nav-icon(@click="drawer = !drawer" v-if="$vuetify.breakpoint.smAndDown")
                 v-icon mdi-menu
-            v-img(src="/images/logos/logo-light.png"
-                width="150"
-                contain
-                alt="LFS Logo"
-                max-height="60%"
-                style="margin-left: 5vw")
+            router-link(to="/")
+                v-img(src="/images/logos/logo-light.png"
+                    width="150"
+                    contain
+                    alt="LFS Logo"
+                    max-height="60%"
+                    style="margin-left: 5vw")
             template(v-if="$vuetify.breakpoint.mdAndUp")
                 v-tabs(right color="accent" style="margin-right: 2vw")
                     v-tabs-slider
@@ -22,10 +23,10 @@
                     v-tab(to="/recruitment") {{ $t("main_title_tabs.recruitment_tab") }}
                     v-tab(to="/contact") {{ $t("main_title_tabs.contact_tab") }}
 
-                v-btn.mr-8(icon @click="show_search = !show_search")
+                v-btn.mr-8(icon @click="search_store.show_search = !search_store.show_search")
                     v-icon mdi-magnify
 
-            v-btn(v-if="$vuetify.breakpoint.smAndDown" icon @click="show_search = !show_search")
+            v-btn(v-if="$vuetify.breakpoint.smAndDown" icon @click="search_store.show_search = !search_store.show_search")
                 v-icon mdi-magnify
 
             v-btn-toggle(
@@ -39,13 +40,13 @@
                 v-btn(value="sv")
                     v-img(src="/images/flags/sv_flag.png" width="24" contain alt="Svenska")
 
-            template(v-if="show_search" v-slot:extension)
+            template(v-if="search_store.show_search" v-slot:extension)
                 v-row(align="center" justify="center")
                     v-col(:cols="$vuetify.breakpoint.mdAndUp? 6:12")
                         v-text-field(v-model="search"
                             tile
                             color="accent"
-                            label="Search"
+                            :placeholder="$t('search.placeholder')"
                             single-line
                             hide-details
                             prepend-inner-icon="mdi-magnify"
@@ -110,26 +111,32 @@
                 v-row.mt-4(align="center" justify="center")
                     span(style="text-align: center") © 2022 Luleå Formula Student (LFS)
                         wbr
-                        | | Version {{ version }}
+                        |  | Version {{ version }}
 
 </template>
 
 <script lang="ts">
 import {Component, Vue, Watch} from 'vue-property-decorator';
 import GdprCookieBanner from "@/components/GdprCookieBanner.vue";
+import {search_store} from "@/stores/search_store";
 
 @Component({
     components: {GdprCookieBanner},
 })
 export default class App extends Vue {
+    search_store = search_store()
     drawer = false;
     search = '';
-    show_search = false;
     language = 'sv';
-    about_menu = false;
 
     get version() {
         return process.env.VUE_APP_VERSION
+    }
+
+    beforeMount() {
+        if (this.$route.path === '/search') {
+            this.search_store.show_search = true
+        }
     }
 
     @Watch('language')
@@ -138,7 +145,12 @@ export default class App extends Vue {
     }
 
     do_search() {
-        this.search = ""
+        if (this.$route.path !== '/search') {
+            this.$router.push({path: '/search', query: {q: this.search}});
+        } else {
+            this.search_store.search_query = this.search;
+            this.search_store.search()
+        }
     }
 }
 </script>

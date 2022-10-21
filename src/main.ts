@@ -6,6 +6,11 @@ import VueGtag from "vue-gtag";
 import i18n from './i18n'
 import Vuetify from 'vuetify';
 import 'vuetify/dist/vuetify.min.css';
+import { createPinia, PiniaVuePlugin } from 'pinia'
+import {search_store} from "@/stores/search_store";
+
+Vue.use(PiniaVuePlugin)
+const pinia = createPinia()
 
 Vue.use(Vuetify);
 
@@ -41,9 +46,19 @@ Vue.use(VueGtag, {
     enabled: false,
 }, router);
 
+
+router.beforeEach((to, from, next) => {
+    window.scrollTo(0, 0)
+    if(from.path === "/search" && to.path !== "/search") {
+        search_store().show_search = false
+    }
+    next()
+})
+
 new Vue({
     router,
     vuetify,
     i18n,
+    pinia,
     render: h => h(App)
 }).$mount('#app')
