@@ -2,7 +2,7 @@
     "main_title_tabs": {
         "home_tab": "Hem",
         "about_tab": "Om Oss",
-        "contact_tab": "Kontakt oss",
+        "contact_tab": "Kontakt",
         "recruitment_tab": "Rekrytering"
     },
     "footer": {
@@ -13,7 +13,7 @@
         "read_more_text": "Läs mer",
         "recruit_section": {
             "title": "Vi rekryterar!",
-            "description": "Vi rektryterar nya lagmedlemmar och lagledare! Om du är intresserad av att bli en del av vårt lag, sök till oss genom att klicka på knappen nedan!"
+            "description": "Vi rektryterar nya lagmedlemmar och lagledare! Om du är intresserad av att bli en del utav ett av lagen eller bli en styrelsemedlem, sök till oss genom att klicka på knappen nedan!"
         },
         "started_section": {
             "title": "Nu är vi igång!",
@@ -21,7 +21,7 @@
         },
         "about_section": {
             "title": "Om Oss",
-            "description": "Vi är Luleå Formula Student och vi arbetar aktivit med att uteckla och ta fram en tävlingsbar formelbil, där vårt fokus ligger på att både utveckla en bil samtidigt utveckla oss själva som blivande ingenjörer. Klicka gärna på knappen nedan för att läsa mer om oss."
+            "description": "Vi är Luleå Formula Student och vi arbetar aktivt med att utveckla och ta fram en tävlingsbar formelbil, där vårt fokus ligger på att både utveckla en bil samtidigt oss själva som blivande ingenjörer. Klicka gärna på knappen nedan för att läsa mer om oss och vår resa."
         },
         "contact_section": {
             "title": "Kontakta oss",
@@ -109,5 +109,11 @@
         "title": "Rekrytering",
         "description": "Nedan hittar du ett formulär för att ansöka till en eller flera utav rollerna. Har du några funderingar kring ansökningen går det självklart bra att kontakta oss. Vi söker just nu de följande rollerna",
         "roll_description": "(Du kan klicka på varje roll för att komma vidare till en mer detaljerad beskrivning av rollen.)"
+    },
+    "search": {
+        "title": "Sök",
+        "placeholder": "Sök efter något...",
+        "no_results": "Inga resultat hittades",
+        "description": "Hittade {count} resultat för {query} på {time} sekunder."
     }
 }
