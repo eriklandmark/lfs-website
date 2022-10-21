@@ -54,7 +54,7 @@
                     span {{$t('home.contact_section.description')}}
                     br
                     v-btn.mt-8(color="accent" dark large to="/contact" ) {{$t('home.read_more_text')}}
-            v-row.my-16(justify="center")
+            //v-row.my-16(justify="center")
                 v-col(cols="12" md="12")
                     v-card(width="100%" )
                         v-card-text
