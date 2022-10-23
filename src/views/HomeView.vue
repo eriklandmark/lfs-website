@@ -5,25 +5,30 @@
             :height="$vuetify.breakpoint.smAndDown? 'calc(100vh - 56px)': 'calc(100vh - 100px)'"
 
             hide-delimiter-background
-            show-arrows-on-hover)
+            hide-arrows
+            :show-arrows="false"
+            hide-delimiters
+            )
             v-carousel-item()
                 v-card(height='100%' flat :rounded="false")
-                    v-img(href="/cars/" src="/images/cars/car-racing-side-whole.jpg" height='100%'
-                        alt="Images of formula cars | Mikael Larsson 2006")
+                    v-img(src="/images/cars/race_track.png" height='100%')
                         v-sheet(style="background: rgba(3, 32, 64, 0.8)" height="100%" )
                             v-container.fill-height
-                                v-row.my-16(align="center" justify="end" )
+                                v-row.my-16(align="center" justify="start" )
                                     v-col(cols="12" md="6")
                                         v-sheet(color="transparent" dark)
+                                            v-card-title(style="font-size: 2em").font-weight-bold {{$t('home.started_section.title')}}
+                                            v-card-text(style="font-size: 1.2em") {{$t('home.started_section.description')}}
                                             v-card-title(style="font-size: 2em").font-weight-bold {{$t('home.recruit_section.title')}}
                                             v-card-text(style="font-size: 1.2em") {{$t('home.recruit_section.description')}}
                                             v-card-actions.align-center
                                                 v-spacer
                                                 v-btn.mt-8(color="primary" dark large to="/recruitment") {{$t('home.read_more_text')}}
                                                 v-spacer
-            v-carousel-item()
+
+            //v-carousel-item()
                 v-card(height='100%' flat :rounded="false")
-                    v-img(href="/cars/" src="/images/cars/car-racing-side.jpg" height='100%'
+                    v-img(href="/cars/" src="/images/cars/formula_car_racing.jpg" height='100%'
                         alt="Images of LTU formula cars | Mikael Larsson 2006")
                         v-sheet(style="background: rgba(3, 32, 64, 0.8)" height="100%" )
                             v-container.fill-height

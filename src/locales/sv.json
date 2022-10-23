@@ -7,7 +7,8 @@
     },
     "footer": {
         "resources_title": "Resurser",
-        "credits_title": "Krediter"
+        "credits_title": "Krediter",
+        "contact_title": "Kontakt"
     },
     "home": {
         "read_more_text": "Läs mer",
@@ -46,7 +47,7 @@
             },
             "before_2022": {
                 "title": "Före 2022",
-                "description": "Innan 2022 fanns projektet på skolan under ett antal år men hade sitt sista år 2008. Bilen på bilden åvan och specifiktationerna nedan är för 2006 års bil. Sedan dess har inte något lag på LTU tävlat i Formula Student."
+                "description": "Innan 2022 fanns projektet på skolan under ett antal år men hade sitt sista år 2008. Bilens specifiktationer som skrivs nedan är för 2006 års bil. Sedan 2008 har inte något lag på LTU tävlat i Formula Student. men förhoppningsvis kommer det att ändras."
             },
             "2022_summer": {
                 "title": "Sommaren 2022",

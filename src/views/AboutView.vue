@@ -55,7 +55,7 @@
                             template(v-slot:opposite)
                                 h3 {{ $t('about.history.before_2022.title') }}
                             v-card
-                                v-card-text
+                                //v-card-text
                                     v-img(src="/images/cars/car-empty.jpg" contain alt="" max-height="250px")
                                 v-card-text(style="color: black !important") {{ $t('about.history.before_2022.description') }}
                                 v-card-text(style="color: black !important")
@@ -157,6 +157,11 @@ export default class AboutView extends Vue {
                     {
                         name: "David Englund",
                         title: `${this.$t("about.team.titles.team-leader").toString()} - ${this.$t("about.team.power-train.title").toString()}`,
+                        avatar: "none"
+                    },
+                    {
+                        name: "Vakant",
+                        title: `${this.$t("about.team.titles.team-leader").toString()} - ${this.$t("about.team.low-voltage.title").toString()}`,
                         avatar: "none"
                     },
                 ]
@@ -262,6 +267,11 @@ export default class AboutView extends Vue {
                 about: this.$t("about.team.low-voltage.description").toString(),
                 href: "low-voltage",
                 members: [
+                    {
+                        name: "Vakant",
+                        title: this.$t("about.team.titles.team-leader").toString(),
+                        avatar: "none"
+                    },
                     {
                         name: "Fredrik Höglund",
                         title: this.$t("about.team.titles.team-member").toString(),

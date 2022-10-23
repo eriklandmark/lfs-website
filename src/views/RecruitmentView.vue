@@ -14,7 +14,7 @@
                             router-link(to="/about?tab=administration") {{$t('about.team.titles.team-member')}} - {{$t('about.team.administration.title')}}
                     span {{$t('recruitment.roll_description')}}
             v-row.my-4(align="center" justify="center")
-                iframe(src='https://docs.google.com/forms/d/e/1FAIpQLSc7WXpb9RrNIX4e_e2f2TV_7T8VUNPJU7F2hrdY7DaMAo5VoQ/viewform?embedded=true'
+                iframe(src="https://docs.google.com/forms/d/e/1FAIpQLSc7WXpb9RrNIX4e_e2f2TV_7T8VUNPJU7F2hrdY7DaMAo5VoQ/viewform?embedded=false"
                     width='100%'
                     height='1590'
                     frameborder='0'

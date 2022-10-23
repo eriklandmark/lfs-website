@@ -47,17 +47,18 @@
             v-row.mb-8
                 v-col(v-for="member in board" cols="12" md="4" :key="member.name")
                     v-card
-                        v-card-title {{member.title}}:
-                        v-card-subtitle {{member.name}}
-                        v-card-text.pb-9(style="")
-                            span(style="float:left") {{$t('contact.phone-number')}}
-                            wbr
-                            a.ml-1(href="tel:+46700000000" style=style = "float: right") +4670 00 00 000
-                            br
-                            span(style="float:left") {{$t('contact.email')}}
-                            a.ml-1(href="mailto:info@luleafs.se" style="float: right") info@luleafs.se
+                        v-card-title {{member.title}}
+                        v-card-subtitle.pb-0 {{member.name}}
+                        v-card-text.pb-9()
 
-
+                            template(v-if="member.email")
+                                br
+                                span(style="float:left") {{$t('contact.email')}}
+                                a.ml-1(href="mailto:info@luleafs.se" style="float: right") {{member.email}}
+                            template(v-if="member.phonenumber")
+                                br
+                                span(style="float:left") {{$t('contact.phone-number')}}
+                                a(v-if="member['phonenumber']").ml-1(href="tel:+46700000000" style=style = "float: right") +4670 00 00 000
 </template>
 
 <script lang="ts">
@@ -71,20 +72,23 @@ export default class ContactView extends Vue {
         {
             name: "Jacob Höglund",
             title: this.$t("about.team.titles.project-leader").toString(),
+            email: "jacob.hoglund@luleafs.se",
         },
-        {
+        /*{
             name: "Samuel Höglund",
             title: this.$t("about.team.titles.technical-leader").toString(),
-        },
+        },*/
         {
             name: "Erik Landmark",
             title: this.$t("about.team.titles.technical-leader").toString(),
+            email: "erik.landmark@luleafs.se"
         },
         {
             name: "Max Wiberg",
             title: `${this.$t("about.team.titles.team-leader").toString()} - ${this.$t("about.team.administration.title").toString()}`,
+            email: "max.wiberg@luleafs.se",
         },
-        {
+        /*{
             name: "Fabian Dalenius",
             title: `${this.$t("about.team.titles.team-leader").toString()} - ${this.$t("about.team.aerodynamics.title").toString()}`,
         },
@@ -99,7 +103,7 @@ export default class ContactView extends Vue {
         {
             name: "David Englund",
             title: `${this.$t("about.team.titles.team-leader").toString()} - ${this.$t("about.team.power-train.title").toString()}`,
-        }]
+        }*/]
 }
 </script>
 

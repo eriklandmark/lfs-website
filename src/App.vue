@@ -1,20 +1,21 @@
 <template lang="pug">
     v-app
         v-app-bar(app
-        color="white"
+            color="white"
             :height="$vuetify.breakpoint.mdAndUp? 100:56"
             :extension-height="search_store.show_search ? 100 : 0"
             extension-transition="fade-transition"
             :extended="search_store.show_search")
             v-app-bar-nav-icon(@click="drawer = !drawer" v-if="$vuetify.breakpoint.smAndDown")
                 v-icon mdi-menu
-            router-link(to="/")
-                v-img(src="/images/logos/logo-light.png"
-                    width="150"
-                    contain
-                    alt="LFS Logo"
-                    max-height="60%"
-                    style="margin-left: 5vw")
+            v-img(src="/images/logos/logo-light.png"
+                contain
+                width="150px"
+                alt="LFS Logo"
+                max-height="60%"
+                eager
+                style="margin-left: 5vw"
+                @click="$router.push('/')")
             template(v-if="$vuetify.breakpoint.mdAndUp")
                 v-tabs(right color="accent" style="margin-right: 2vw")
                     v-tabs-slider
@@ -89,24 +90,24 @@
         v-footer(app dark color="primary" min-height="250" absolute)
             v-container.mt-8
                 v-row
-                    v-col(cols="12" md="4")
-                        v-img(src="/images/logos/logo-dark.png" contain alt="LFS Logo")
-                    v-col(cols="12" md="4")
-                        h3 {{ $t("footer.resources_title") }}
+                    v-col(cols="12" md="3")
+                        v-img(src="/images/logos/logo-dark.png" max-height="70%" contain alt="LFS Logo")
+                    v-col(cols="12" md="3")
+                        h3 {{ $t("footer.contact_title") }}
                         span Mail:
                             a.ml-1(href="mailto:info@luleafs.se" style="color: white") info@luleafs.se
                         br
-                        span Mobil:
+                        //span Mobil:
                             a.ml-1(href="tel:+46700000000" style="color: white") 0700-000 000
-                        br
+                        //br
+
+                    v-col(cols="12" md="3")
+                        h3 {{ $t("footer.resources_title") }}
                         router-link(to="/privacy-policy" style="color: white") Privacy Policy
 
-                    v-col(cols="12" md="4")
+                    v-col(cols="12" md="3")
                         h3 {{ $t("footer.credits_title") }}
                         a(href="https://www.vecteezy.com/free-vector/icons" style="color: white") Icons Vectors by Vecteezy
-
-                        br
-                        a(href="https://rejsa.nu/forum/viewtopic.php?t=28732" target="_blank" style="color: white") Images of formula cars | Mikael Larsson 2006
 
                 v-row.mt-4(align="center" justify="center")
                     span(style="text-align: center") © 2022 Luleå Formula Student (LFS)
@@ -186,5 +187,10 @@ html {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.center-img {
+    display: grid;
+    place-items: center;
 }
 </style>

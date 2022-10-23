@@ -87,7 +87,7 @@ const router = new VueRouter({
 router.afterEach((to, from) => {
     Vue.nextTick(() => {
         if (to.meta && to.meta.title) {
-            document.title = to.meta.title + "- LFS"
+            document.title = to.meta.title + " - Luleå Formula Student (LFS)"
         }
     });
 });
