@@ -64,11 +64,12 @@
                 "project-leader": "Projekledare",
                 "technical-leader": "Teknikledare",
                 "team-leader": "Lagledare",
-                "team-member": "Lagmedlem"
+                "team-member": "Lagmedlem",
+                "hr-manager": "HR-ansvarig"
             },
             "board": {
-                "title": "Styrelsen",
-                "description": "Tillsammans med lagen ansvarar styrelsen för att föreningen ska fungera och utvecklas. Styrelsen består av 9 personer som är valda av föreningens medlemmar och består av en projektledare, 2 st teknikledare och lagledare för varje lag. Styrelsen är föreningens högsta beslutande organ och ansvarar för att föreningen följer stadgarna och lagar. Styrelsen är också ansvarig för att föreningen har en god ekonomi och att föreningen har en god ekonomisk ställning."
+                "title": "Ledningsgrupp",
+                "description": "Tillsammans med lagen ansvarar ledningsgruppen för att föreningen ska fungera och utvecklas. Ledningsgruppen består av 10 personer som är valda av föreningens medlemmar och består av en projektledare, 2 st teknikledare och lagledare för varje lag samt HR-ansvarig. Ledningsgruppen ansvarar för att föreningen följer stadgarna, lagar och når uppsatta mål inom föreningen. Ledningsgruppen är också ansvarig för att föreningen har en god ekonomi och en god ekonomisk ställning."
             },
             "administration": {
                 "title": "Administration",

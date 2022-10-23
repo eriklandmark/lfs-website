@@ -135,6 +135,11 @@ export default class AboutView extends Vue {
                         avatar: "none"
                     },
                     {
+                        name: "Sannah Engelin",
+                        title: `${this.$t("about.team.titles.hr-manager").toString()}`,
+                        avatar: "none"
+                    },
+                    {
                         name: "Max Wiberg",
                         title: `${this.$t("about.team.titles.team-leader").toString()} - ${this.$t("about.team.administration.title").toString()}`,
                         avatar: "none"
