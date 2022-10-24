@@ -58,7 +58,7 @@
                             template(v-if="member.phonenumber")
                                 br
                                 span(style="float:left") {{$t('contact.phone-number')}}
-                                a.ml-1(:href="'tel:' + member.phonenumber" style=style = "float: right") {{member.phonenumber}}
+                                a.ml-1(:href="'tel:' + member.phonenumber" style="float: right") {{member.phonenumber}}
 </template>
 
 <script lang="ts">
