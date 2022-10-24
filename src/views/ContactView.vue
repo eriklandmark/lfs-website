@@ -54,11 +54,11 @@
                             template(v-if="member.email")
                                 br
                                 span(style="float:left") {{$t('contact.email')}}
-                                a.ml-1(href="mailto:info@luleafs.se" style="float: right") {{member.email}}
+                                a.ml-1(:href="'mailto:' + member.email" style="float: right") {{member.email}}
                             template(v-if="member.phonenumber")
                                 br
                                 span(style="float:left") {{$t('contact.phone-number')}}
-                                a(v-if="member['phonenumber']").ml-1(href="tel:+46700000000" style=style = "float: right") +4670 00 00 000
+                                a.ml-1(:href="'tel:' + member.phonenumber" style=style = "float: right") {{member.phonenumber}}
 </template>
 
 <script lang="ts">
