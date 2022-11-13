@@ -2,8 +2,6 @@ FROM node:lts
 
 WORKDIR /
 
-RUN npm install --global serve
-
 COPY package.json .
 RUN npm install
 
@@ -17,4 +15,4 @@ COPY serve.json /serve.json
 
 RUN npm run build
 
-CMD serve
+CMD npm run prod

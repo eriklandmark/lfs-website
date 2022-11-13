@@ -74,13 +74,12 @@
                                     span {{ $t('about.history.car_specs.topSpeed', {topSpeed: 135}) }}
                                     br
 
-            v-row
-                v-row.my-16(align="center" )
-                    v-col(cols="8" md="8")
-                        h1.mb-4 {{$t('about.links.title')}}
-                        ul
-                            li(v-for="link in links" :key="link.title")
-                                a(:href="link.href" target="_blank") {{ link.title }}
+            v-row.my-16(align="center")
+                v-col
+                    h1.mb-4 {{$t('about.links.title')}}
+                    ul
+                        li(v-for="link in links" :key="link.title")
+                            a(:href="link.href" target="_blank") {{ link.title }}
 
 </template>
 

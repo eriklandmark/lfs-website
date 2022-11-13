@@ -1,7 +1,7 @@
 <template lang="pug">
     .contact-view
         v-container
-            v-row.my-8(align="center" justify="center" )
+            v-row.my-8(align="start" justify="center" )
                 v-col(cols="12" md="6")
                     h2 {{$t('contact.reach_us')}}
                     v-list
@@ -11,7 +11,7 @@
                             v-list-item-content
                                 v-list-item-title Luleå Tekniska Universitet
                                 v-list-item-subtitle Luleå, Sverige
-                        v-list-item
+                        //v-list-item
                             v-list-item-icon
                                 v-icon(large) mdi-phone
                             v-list-item-content
@@ -42,7 +42,7 @@
                             v-list-item-icon
                                 v-icon(large) mdi-linkedin
                             v-list-item-content
-                                a(href="https://www.linkedin.com/company/lule%C3%A5-formula-student/about/" target="_blank") LFS Luleå Formula Student
+                                a(href="https://www.linkedin.com/company/luleaformulastudent/" target="_blank") Luleå Formula Student
             h2.mb-5 {{$t('contact.contact_board')}}
             v-row.mb-8
                 v-col(v-for="member in board" cols="12" md="4" :key="member.name")

@@ -24,7 +24,7 @@
                     v-tab(to="/recruitment") {{ $t("main_title_tabs.recruitment_tab") }}
                     v-tab(to="/contact") {{ $t("main_title_tabs.contact_tab") }}
 
-                v-btn.mr-8(icon @click="search_store.show_search = !search_store.show_search")
+                //v-btn.mr-8(icon @click="search_store.show_search = !search_store.show_search")
                     v-icon mdi-magnify
 
             v-btn(v-if="$vuetify.breakpoint.smAndDown" icon @click="search_store.show_search = !search_store.show_search")
@@ -69,6 +69,11 @@
                         v-icon mdi-account
                     v-list-item-content
                         v-list-item-title {{ $t("main_title_tabs.about_tab") }}
+                v-list-item(to="/recruitment")
+                    v-list-item-icon
+                        v-icon mdi-account-multiple-plus
+                    v-list-item-content
+                        v-list-item-title {{ $t("main_title_tabs.recruitment_tab") }}
                 v-list-item(to="/contact")
                     v-list-item-icon
                         v-icon mdi-email
@@ -91,7 +96,7 @@
             v-container.mt-8
                 v-row
                     v-col(cols="12" md="3")
-                        v-img(src="/images/logos/logo-dark.png" max-height="70%" contain alt="LFS Logo")
+                        v-img(src="/images/logos/logo-dark.png" height="80px" contain alt="LFS Logo")
                     v-col(cols="12" md="3")
                         h3 {{ $t("footer.contact_title") }}
                         span Mail:
