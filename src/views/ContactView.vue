@@ -88,6 +88,11 @@ export default class ContactView extends Vue {
             title: `${this.$t("about.team.titles.team-leader").toString()} - ${this.$t("about.team.administration.title").toString()}`,
             email: "max.wiberg@luleafs.se",
         },
+        {
+            name: "Sannah Engelin",
+            title: `${this.$t("about.team.titles.hr-manager")}`,
+            email: "sannah.engelin@luleafs.se",
+        },
         /*{
             name: "Fabian Dalenius",
             title: `${this.$t("about.team.titles.team-leader").toString()} - ${this.$t("about.team.aerodynamics.title").toString()}`,
