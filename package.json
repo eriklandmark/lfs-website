@@ -1,6 +1,6 @@
 {
     "name": "lfs-website",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "private": true,
     "description": "Luleå Formula Student's Website",
     "author": "Erik Landmark",
