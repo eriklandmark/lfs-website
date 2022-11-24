@@ -1,17 +1,24 @@
 <template lang="pug">
     .search-view
-        div(v-html="'<script async src=\"https://cse.google.com/cse.js?cx=46becd12c43144007\"></script>'")
         v-container
             v-row.my-8(align="center" justify="center" )
                 v-col(cols="12" md="12")
                     h1 {{$t('search.title')}}
-                    span(v-if="search_store.search_info.hasOwnProperty('searchTime')")
-                        | {{$t('search.description', {query: search_store.search_query, count: search_store.search_info.totalResults, time: search_store.search_info.formattedSearchTime})}}
-
-                    template(v-if="search_store.search_results.length === 0")
+                    .mb-5
+                        span(v-if="search_store.search_info.hasOwnProperty('searchTime')")
+                            | {{$t('search.description', {query: search_store.search_query, count: search_store.search_info.totalResults, time: search_store.search_info.formattedSearchTime})}}
+                    template(v-if="search_store.search_info.totalResults && search_store.search_info.totalResults == 0")
                         h2.mt-4(style="text-align:center") {{$t('search.no_results')}}
                     template(v-else)
-                        | {{search_store.search_results}}
+                        template(v-for="result in search_store.search_results")
+                            v-divider
+                            v-card.mb-5(flat)
+                                v-card-title
+                                    a(:href="result.link" v-html="result.htmlTitle" )
+                                v-card-subtitle(v-html="result.htmlFormattedUrl")
+                                v-card-text.black--text(v-html="result.htmlSnippet")
+                        v-divider
+
 </template>
 
 <script lang="ts">

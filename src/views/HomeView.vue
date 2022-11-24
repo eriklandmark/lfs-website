@@ -50,10 +50,10 @@
                     br
                     v-btn.mt-8(color="accent" dark large to="/about") {{$t('home.read_more_text')}}
                 v-col(cols="12" md="6")
-                    v-img(src="/images/cars/car-side.svg" contain alt="LFS car from side." max-height="30vh")
+                    v-img(src="/images/cars/car-side.svg" contain alt="Car from side." max-height="30vh")
             v-row.my-16(align="center")
                 v-col(cols="12" md="6")
-                    v-img(src="/images/cars/car-front.svg" contain alt="LFS car from the front." max-height="30vh" )
+                    v-img(src="/images/cars/car-front.svg" contain alt="Car from the front." max-height="30vh" )
                 v-col(cols="12" md="6")
                     h1 {{$t('home.contact_section.title')}}
                     span {{$t('home.contact_section.description')}}

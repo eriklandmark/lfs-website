@@ -1,17 +1,17 @@
 <template lang="pug">
     v-app
         v-app-bar(app
-            color="white"
+        color="white"
             :height="$vuetify.breakpoint.mdAndUp? 100:56"
             :extension-height="search_store.show_search ? 100 : 0"
             extension-transition="fade-transition"
             :extended="search_store.show_search")
             v-app-bar-nav-icon(@click="drawer = !drawer" v-if="$vuetify.breakpoint.smAndDown")
                 v-icon mdi-menu
-            v-img(src="/images/logos/logo-light.png"
+            v-img.logo(src="/images/logos/logo-light.png"
                 contain
                 width="150px"
-                alt="LFS Logo"
+                alt="Logo"
                 max-height="60%"
                 eager
                 style="margin-left: 5vw"
@@ -24,11 +24,11 @@
                     v-tab(to="/recruitment") {{ $t("main_title_tabs.recruitment_tab") }}
                     v-tab(to="/contact") {{ $t("main_title_tabs.contact_tab") }}
 
-                //v-btn.mr-8(icon @click="search_store.show_search = !search_store.show_search")
-                    v-icon mdi-magnify
+                v-btn.mr-8(icon @click="search_store.show_search = !search_store.show_search")
+                    v-icon(:color="search_store.show_search? 'accent': ''") mdi-magnify
 
             v-btn(v-if="$vuetify.breakpoint.smAndDown" icon @click="search_store.show_search = !search_store.show_search")
-                v-icon mdi-magnify
+                v-icon(:color="search_store.show_search? 'accent': ''") mdi-magnify
 
             v-btn-toggle(
                 v-if="$vuetify.breakpoint.mdAndUp"
@@ -47,6 +47,7 @@
                         v-text-field(v-model="search"
                             tile
                             color="accent"
+                            :loading="search_store.loading"
                             :placeholder="$t('search.placeholder')"
                             single-line
                             hide-details
@@ -96,7 +97,7 @@
             v-container.mt-8
                 v-row
                     v-col(cols="12" md="3")
-                        v-img(src="/images/logos/logo-dark.png" height="80px" contain alt="LFS Logo")
+                        v-img(src="/images/logos/logo-dark.png" height="80px" contain alt="Lulea Forumla Student Logo")
                     v-col(cols="12" md="3")
                         h3 {{ $t("footer.contact_title") }}
                         span Mail:
@@ -115,7 +116,7 @@
                         a(href="https://www.vecteezy.com/free-vector/icons" style="color: white") Icons Vectors by Vecteezy
 
                 v-row.mt-4(align="center" justify="center")
-                    span(style="text-align: center") © 2022 Luleå Formula Student (LFS)
+                    span(style="text-align: center") © 2022 Luleå Formula Student
                         wbr
                         |  | Version {{ version }}
 
@@ -171,7 +172,26 @@ html {
     font-family: "Raleway", sans-serif !important;
 }
 
+.v-app-bar {
+
+
+    .v-tab.v-tab--active {
+        font-weight: 700 !important;
+    }
+
+    .v-tab {
+        font-weight: 400 !important;
+        color: black !important;
+    }
+}
+
+.logo:hover {
+    cursor: pointer;
+}
+
 .v-application {
+
+
     [class*='text-'], [class*='font-'] {
         font-family: $body-font-family, sans-serif !important;
     }
