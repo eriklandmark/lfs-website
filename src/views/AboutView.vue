@@ -25,16 +25,20 @@
                                         .avatar(v-for="member in team.members" :key="member.name")
                                             v-img(v-if="member.avatar !== 'none'"
                                                 :src="member.avatar"
-                                                :alt="member.name"
-                                                width="180"
+                                                :alt="member.name + ' - ' + member.title"
+                                                width="160"
                                                 height="200px"
-                                                contain)
+                                                )
                                             .none-avatar(v-else)
                                                 v-icon(x-large) mdi-account
                                             .ml-1.mt-2
-                                                span.font-weight-bold(style="font-size: 1.2em;") {{ member.name }}
+                                                span.font-weight-bold(style="font-size: 1em;") {{ member.name }}
                                                 br
-                                                span(style="font-size: 1.1em;") {{ member.title }}
+                                                span(style="font-size: 0.8em;") {{ member.title }}
+                                    template(v-if="team.group_photo")
+                                        v-divider.ma-4
+                                        v-card-text.center-items
+                                            v-img(:src="team.group_photo" :alt="team.title" width="70%" height="auto")
 
             v-row.my-8(align="center" )
                 v-col(cols="12" md="12")
@@ -117,54 +121,55 @@ export default class AboutView extends Vue {
                 title: this.$t("about.team.board.title").toString(),
                 about: this.$t("about.team.board.description").toString(),
                 href: "board",
+                group_photo: "/images/profile_pictures/board/board.png",
                 members: [
                     {
                         name: "Jacob Höglund",
                         title: this.$t("about.team.titles.project-leader").toString(),
-                        avatar: "none"
+                        avatar: "images/profile_pictures/board/project_leader.png"
                     },
                     {
                         name: "Samuel Höglund",
                         title: this.$t("about.team.titles.technical-leader").toString(),
-                        avatar: "none"
+                        avatar: "images/profile_pictures/board/technical_leader_1.jpg"
                     },
                     {
                         name: "Erik Landmark",
                         title: this.$t("about.team.titles.technical-leader").toString(),
-                        avatar: "none"
+                        avatar: "images/profile_pictures/board/technical_leader_2.png"
                     },
                     {
                         name: "Sannah Engelin",
                         title: `${this.$t("about.team.titles.hr-manager").toString()}`,
-                        avatar: "none"
+                        avatar: "images/profile_pictures/board/hr_manager.png"
                     },
                     {
                         name: "Max Wiberg",
                         title: `${this.$t("about.team.titles.team-leader").toString()} - ${this.$t("about.team.administration.title").toString()}`,
-                        avatar: "none"
+                        avatar: "images/profile_pictures/board/teamleader_admin.png"
                     },
                     {
                         name: "Fabian Dalenius",
                         title: `${this.$t("about.team.titles.team-leader").toString()} - ${this.$t("about.team.aerodynamics.title").toString()}`,
-                        avatar: "none"
+                        avatar: "images/profile_pictures/board/teamleader_aerodynamics.png"
                     },
                     {
                         name: "Louise Lööf",
                         title: `${this.$t("about.team.titles.team-leader").toString()} - ${this.$t("about.team.chassis.title").toString()}`,
-                        avatar: "none"
-                    },
-                    {
-                        name: "Alec Berkien",
-                        title: `${this.$t("about.team.titles.team-leader").toString()} - ${this.$t("about.team.vehicle-dynamics.title").toString()}`,
-                        avatar: "none"
+                        avatar: "images/profile_pictures/board/teamleader_chassis.png"
                     },
                     {
                         name: "David Englund",
                         title: `${this.$t("about.team.titles.team-leader").toString()} - ${this.$t("about.team.power-train.title").toString()}`,
-                        avatar: "none"
+                        avatar: "images/profile_pictures/board/teamleader_powertrain.png"
                     },
                     {
-                        name: "Vakant",
+                        name: "Alec Berkien",
+                        title: `${this.$t("about.team.titles.team-leader").toString()} - ${this.$t("about.team.vehicle-dynamics.title").toString()}`,
+                        avatar: "images/profile_pictures/board/teamleader_vehicle_dynamics.png"
+                    },
+                    {
+                        name: "Thomas Tillgren",
                         title: `${this.$t("about.team.titles.team-leader").toString()} - ${this.$t("about.team.low-voltage.title").toString()}`,
                         avatar: "none"
                     },
@@ -174,11 +179,12 @@ export default class AboutView extends Vue {
                 title: this.$t("about.team.administration.title").toString(),
                 about: this.$t("about.team.administration.description").toString(),
                 href: "administration",
+                group_photo: "",
                 members: [
                     {
                         name: "Max Wiberg",
                         title: this.$t("about.team.titles.team-leader").toString(),
-                        avatar: "none"
+                        avatar: "images/profile_pictures/board/teamleader_admin.png"
                     },
                     {
                         name: "Emilia Forsström",
@@ -201,11 +207,12 @@ export default class AboutView extends Vue {
                 title: this.$t("about.team.aerodynamics.title").toString(),
                 about: this.$t("about.team.aerodynamics.description").toString(),
                 href: "aerodynamics",
+                group_photo: "",
                 members: [
                     {
                         name: "Fabian Dalenius",
                         title: this.$t("about.team.titles.team-leader").toString(),
-                        avatar: "none"
+                        avatar: "images/profile_pictures/board/teamleader_aerodynamics.png"
                     },
                     {
                         name: "Douglas Briggert",
@@ -233,11 +240,12 @@ export default class AboutView extends Vue {
                 title: this.$t("about.team.chassis.title").toString(),
                 about: this.$t("about.team.chassis.description").toString(),
                 href: "chassis",
+                group_photo: "",
                 members: [
                     {
                         name: "Louise Lööf",
                         title: this.$t("about.team.titles.team-leader").toString(),
-                        avatar: "none"
+                        avatar: "images/profile_pictures/board/teamleader_chassis.png"
                     },
                     {
                         name: "Albin Lundvall",
@@ -270,9 +278,10 @@ export default class AboutView extends Vue {
                 title: this.$t("about.team.low-voltage.title").toString(),
                 about: this.$t("about.team.low-voltage.description").toString(),
                 href: "low-voltage",
+                group_photo: "",
                 members: [
                     {
-                        name: "Vakant",
+                        name: "Thomas Tillgren",
                         title: this.$t("about.team.titles.team-leader").toString(),
                         avatar: "none"
                     },
@@ -292,19 +301,15 @@ export default class AboutView extends Vue {
                 title: this.$t("about.team.power-train.title").toString(),
                 about: this.$t("about.team.power-train.description").toString(),
                 href: "power-train",
+                group_photo: "",
                 members: [
                     {
                         name: "David Englund",
                         title: this.$t("about.team.titles.team-leader").toString(),
-                        avatar: "none"
+                        avatar: "images/profile_pictures/board/teamleader_powertrain.png"
                     },
                     {
                         name: "Daniel Baniadam",
-                        title: this.$t("about.team.titles.team-member").toString(),
-                        avatar: "none"
-                    },
-                    {
-                        name: "Jude Marroush",
                         title: this.$t("about.team.titles.team-member").toString(),
                         avatar: "none"
                     },
@@ -323,23 +328,18 @@ export default class AboutView extends Vue {
                         title: this.$t("about.team.titles.team-member").toString(),
                         avatar: "none"
                     },
-                    /*
-                    {
-                        name: "Filip Rask",
-                        title: this.$t("about.team.titles.team-member").toString(),
-                        avatar: "none"
-                    }*/
                 ]
             },
             {
                 title: this.$t("about.team.vehicle-dynamics.title").toString(),
                 about: this.$t("about.team.vehicle-dynamics.description").toString(),
                 href: "vehicle-dynamics",
+                group_photo: "",
                 members: [
                     {
                         name: "Alec Berkien",
                         title: this.$t("about.team.titles.team-leader").toString(),
-                        avatar: "none"
+                        avatar: "images/profile_pictures/board/teamleader_vehicle_dynamics.png"
                     }, {
                         name: "Rasmus Malmqvist",
                         title: this.$t("about.team.titles.team-member").toString(),
@@ -386,7 +386,7 @@ export default class AboutView extends Vue {
 
     .avatars {
         display: grid;
-        grid-template-columns: repeat(auto-fit, 180px);
+        grid-template-columns: repeat(auto-fit, 160px);
         grid-template-rows: repeat(auto-fit, 280px);
         grid-gap: 16px;
         justify-content: center;
@@ -399,10 +399,15 @@ export default class AboutView extends Vue {
                 display: grid;
                 place-items: center;
                 background-color: lightgray;
-                width: 180px;
+                width: 160px;
                 height: 200px
             }
         }
     }
+}
+
+.center-items {
+    display: grid;
+    place-items: center;
 }
 </style>
