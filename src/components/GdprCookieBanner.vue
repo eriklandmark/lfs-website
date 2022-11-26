@@ -4,8 +4,8 @@
             v-card-title Vi använder kakor
             v-card-text.text--black Vi använder analytiska kakor för att förstå hur besökare interagerar med webbplatsen. Dessa cookies hjälper till att ge information om mätvärden som antalet besökare, avvisningsfrekvens, trafikkälla, etc.
         template(v-slot:action='{ attrs }')
-            v-btn(text='' v-bind='attrs' @click='show = false; $gtag.optOut()') Neka
-            v-btn.mx-8(color='accent' dark v-bind='attrs' @click="show = false; setCookie('analytics-tracking','true',30)") Gå vidare
+            v-btn(text='' v-bind='attrs' @click="deny") Neka
+            v-btn.mx-8(color='accent' dark v-bind='attrs' @click="accept") Gå vidare
 
 </template>
 
@@ -20,9 +20,20 @@ export default class GdprCookieBanner extends Vue {
 
     mounted() {
         const is_bot = /bot|google|baidu|bing|msn|teoma|slurp|yandex/i.test(navigator.userAgent)
-        if (this.getCookie('analytics-tracking') !== "true" && process.env.NODE_ENV === 'production' && !is_bot) {
+        if (this.getCookie('analytics-tracking') == null && process.env.NODE_ENV === 'production' && !is_bot) {
             this.show = true;
         }
+    }
+
+    accept() {
+        this.show = false
+        this.setCookie('analytics-tracking','true',30)
+    }
+
+    deny() {
+        this.show = false
+        this.$gtag.optOut()
+        this.setCookie('analytics-tracking', 'false', 30)
     }
 
     setCookie(cname: string, cvalue: string, exdays: number) {
