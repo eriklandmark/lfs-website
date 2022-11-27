@@ -14,7 +14,7 @@
                             v-divider
                             v-card.mb-5(flat)
                                 v-card-title
-                                    a(:href="result.link" v-html="result.htmlTitle" )
+                                    router-link(:to="result.link" v-html="result.htmlTitle" )
                                 v-card-subtitle(v-html="result.htmlFormattedUrl")
                                 v-card-text.black--text(v-html="result.htmlSnippet")
                         v-divider

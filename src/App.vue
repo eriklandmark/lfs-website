@@ -5,6 +5,7 @@
             :height="$vuetify.breakpoint.mdAndUp? 100:56"
             :extension-height="search_store.show_search ? 100 : 0"
             extension-transition="fade-transition"
+            v-click-outside="closeSearch"
             :extended="search_store.show_search")
             v-app-bar-nav-icon(@click="drawer = !drawer" v-if="$vuetify.breakpoint.smAndDown")
                 v-icon mdi-menu
@@ -24,22 +25,23 @@
                     v-tab(to="/recruitment") {{ $t("main_title_tabs.recruitment_tab") }}
                     v-tab(to="/contact") {{ $t("main_title_tabs.contact_tab") }}
 
-                v-btn.mr-8(icon @click="search_store.show_search = !search_store.show_search")
-                    v-icon(:color="search_store.show_search? 'accent': ''") mdi-magnify
-
-            v-btn(v-if="$vuetify.breakpoint.smAndDown" icon @click="search_store.show_search = !search_store.show_search")
+            v-btn.mr-2(icon @click.stop="search_store.show_search = !search_store.show_search")
                 v-icon(:color="search_store.show_search? 'accent': ''") mdi-magnify
 
-            v-btn-toggle(
-                v-if="$vuetify.breakpoint.mdAndUp"
-                mandatory
-                v-model="language"
-                style="margin-right: 5vw"
-                rounded)
-                v-btn(value="en")
-                    v-img(src="/images/flags/en_flag.png" width="24" contain alt="English")
-                v-btn(value="sv")
-                    v-img(src="/images/flags/sv_flag.png" width="24" contain alt="Svenska")
+            v-menu(offset-y)
+                template(v-slot:activator="{ on, attrs }")
+                    v-btn(icon v-bind="attrs" v-on="on" :style="$vuetify.breakpoint.mdAndUp? 'margin-right: 5vw':'margin-right: 8px'" small width="24px" height="24px")
+                        v-img(v-if="language === 'en'" src="/images/flags/en_flag.png" width="18" contain alt="English")
+                        v-img(v-if="language === 'sv'" src="/images/flags/sv_flag.png" width="18" contain alt="Swedish")
+                v-list
+                    v-list-item(@click="language = 'en'")
+                        v-list-item-title English
+                        v-list-item-action
+                            v-img(src="/images/flags/en_flag.png" contain alt="English" width="24" height="24")
+                    v-list-item(@click="language = 'sv'")
+                        v-list-item-title Svenska
+                        v-list-item-action
+                            v-img(src="/images/flags/sv_flag.png" contain alt="Swedish" width="24" height="24")
 
             template(v-if="search_store.show_search" v-slot:extension)
                 v-row(align="center" justify="center")
@@ -81,18 +83,9 @@
                     v-list-item-content
                         v-list-item-title {{ $t("main_title_tabs.contact_tab") }}
 
-            v-row.mt-4(justify="center" )
-                v-btn-toggle(
-                    mandatory
-                    v-model="language"
-                    style="margin-right: 5vw"
-                    rounded)
-                    v-btn(value="en")
-                        v-img(src="/images/flags/en_flag.png" width="24" contain alt="English")
-                    v-btn(value="sv")
-                        v-img(src="/images/flags/sv_flag.png" width="24" contain alt="Svenska")
         v-main(app min-height="calc(100vh - 100px)")
             router-view
+
         v-footer(app dark color="primary" min-height="250" absolute)
             v-container.mt-8
                 v-row
@@ -135,6 +128,22 @@ export default class App extends Vue {
     drawer = false;
     search = '';
     language = 'sv';
+    searchInvoked = false;
+
+    @Watch('search_store.show_search')
+    onSearchShowChange() {
+        if (this.search_store.show_search) {
+            console.log('showing search');
+            this.searchInvoked = true
+        }
+    }
+
+    closeSearch() {
+        if (this.searchInvoked && this.search_store.show_search && this.$route.path !== '/search') {
+            console.log('closing search');
+            this.search_store.show_search = false
+        }
+    }
 
     get version() {
         return process.env.VUE_APP_VERSION
@@ -173,8 +182,6 @@ html {
 }
 
 .v-app-bar {
-
-
     .v-tab.v-tab--active {
         font-weight: 700 !important;
     }

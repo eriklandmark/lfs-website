@@ -8,6 +8,7 @@ import PrivacyPolicyView from "@/views/PrivacyPolicyView.vue";
 import NotFoundView from "@/views/NotFoundView.vue";
 import RecruitmentView from "@/views/RecruitmentView.vue";
 import SearchView from "@/views/SearchView.vue";
+import {search_store} from "@/stores/search_store";
 
 Vue.use(VueRouter)
 
@@ -84,12 +85,21 @@ const router = new VueRouter({
     routes
 })
 
+router.beforeEach((to, from, next) => {
+    try {
+        search_store().show_search = false
+    } catch(e) {}
+
+    next()
+})
+
 router.afterEach((to, from) => {
     Vue.nextTick(() => {
         if (to.meta && to.meta.title) {
             document.title = to.meta.title + " - Luleå Formula Student"
         }
     });
+
 });
 
 export default router

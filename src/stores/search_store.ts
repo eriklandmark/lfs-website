@@ -22,7 +22,10 @@ export const search_store = defineStore('searchStore', {
             const result = await response.json()
             // console.log(result)
             if (result) {
-                this.search_results = (result.items || []).filter((item: any) => item.kind === "customsearch#result")
+                this.search_results = (result.items || []).filter((item: any) => item.kind === "customsearch#result").map((item: any) => {
+                    item.link = item.link.replace("https://luleafs.se", "")
+                    return item
+                })
                 this.search_info = result.searchInformation
             }
 
