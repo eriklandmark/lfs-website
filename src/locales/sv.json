@@ -43,11 +43,15 @@
                 "power": "Effekt: {power} kW",
                 "torque": "Vridmoment: {torque} Nm",
                 "zeroToHundred": "0-100 km/h: {zeroToHundred} sekunder",
-                "topSpeed": "Toppfart: {topSpeed} km/h"
+                "topSpeed": "Topphastighet: {topSpeed} km/h"
             },
-            "before_2022": {
-                "title": "Före 2022",
-                "description": "Innan 2022 fanns projektet på skolan under ett antal år men hade sitt sista år 2008. Bilens specifiktationer som skrivs nedan är för 2006 års bil. Sedan 2008 har inte något lag på LTU tävlat i Formula Student. men förhoppningsvis kommer det att ändras."
+            "2006": {
+                "title": "2006",
+                "description": "Tidigare har projektet funnits på LTU och varit ett utav SIRIUS projekten. År 2006 kom årets bil från LTU på 13:e plats av 59 tävlande lag på tävlingien i Silverstone, England."
+            },
+            "2007": {
+                "title": "2007",
+                "description": "År 2007 återanvände man den förra bilen och byggde vidare och förbättrade. På bilden visas den senaste och sista upplagan av LTU's medverkan i Formula Student då projektet lades ner år 2008."
             },
             "2022_summer": {
                 "title": "Sommaren 2022",

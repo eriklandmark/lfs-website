@@ -6,8 +6,6 @@
                     h1 {{$t('recruitment.title')}}
                     span {{$t('recruitment.description')}}
                     ul.my-4
-                        //li
-                            router-link(to="/about?tab=low-voltage") {{$t('about.team.titles.team-leader')}} - {{$t('about.team.low-voltage.title')}}
                         li
                             router-link(to="/about?tab=low-voltage") {{$t('about.team.titles.team-member')}} - {{$t('about.team.low-voltage.title')}}
                         li
