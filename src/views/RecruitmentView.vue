@@ -1,12 +1,12 @@
 <template lang="pug">
     .home
         v-container
-            v-row.my-16(align="center" )
+            v-row.my-8(align="center" )
                 v-col(cols="12" md="12")
                     h1 {{$t('recruitment.title')}}
                     span {{$t('recruitment.description')}}
                     ul.my-4
-                        li
+                        //li
                             router-link(to="/about?tab=low-voltage") {{$t('about.team.titles.team-leader')}} - {{$t('about.team.low-voltage.title')}}
                         li
                             router-link(to="/about?tab=low-voltage") {{$t('about.team.titles.team-member')}} - {{$t('about.team.low-voltage.title')}}

@@ -1,7 +1,7 @@
 <template lang="pug">
     .privacy-policy
         v-container
-            v-row.my-16(align="center" )
+            v-row.my-8(align="center" )
                 v-col(cols="12" md="12")
                     h1.mt-4.mb-2 Privacy Policy
                     span Luleå Forumula Student, Luleå is committed to protecting the privacy and accuracy of confidential information to the extent possible, subject to provisions of state and federal law. Other than as required by laws that guarantee public access to certain types of information, or in response to subpoenas or other legal instruments that authorize access, personal information is not actively shared. In particular, we do not re-distribute or sell personal information collected on our web servers.
