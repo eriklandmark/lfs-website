@@ -57,7 +57,29 @@
                                 v-card-text(style="color: black !important") {{ $t('about.history.2022_summer.description') }}
                         v-timeline-item(color='accent' fill-dot left)
                             template(v-slot:opposite)
-                                h3 {{ $t('about.history.before_2022.title') }}
+                                h3 2008
+                            v-card
+                                v-card-text
+                                    v-img(src="/images/cars/car_2008_profile.jpg" contain alt="" max-height="250px")
+                                v-card-text(style="color: black !important") {{ $t('about.history.before_2022.description') }}
+                                v-card-text(style="color: black !important")
+                                    span.font-weight-bold {{ $t('about.history.car_specs.title') }}
+                                    br
+                                    span {{ $t('about.history.car_specs.weight', {weight: 195.5}) }}
+                                    br
+                                    span {{ $t('about.history.car_specs.engine', {engine: "Yamaha YXFR6"}) }}
+                                    br
+                                    span {{ $t('about.history.car_specs.hp', {hp: 98}) }}
+                                    br
+                                    span {{ $t('about.history.car_specs.torque', {torque: 68}) }}
+                                    br
+                                    span {{ $t('about.history.car_specs.zeroToHundred', {zeroToHundred: 3.6}) }}
+                                    br
+                                    span {{ $t('about.history.car_specs.topSpeed', {topSpeed: 135}) }}
+                                    br
+                        v-timeline-item(color='accent' fill-dot right)
+                            template(v-slot:opposite)
+                                h3 2006
                             v-card
                                 //v-card-text
                                     v-img(src="/images/cars/car-empty.jpg" contain alt="" max-height="250px")
