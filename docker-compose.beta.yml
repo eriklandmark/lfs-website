@@ -6,6 +6,8 @@ services:
             -   "3001:3000"
         labels:
             - "com.centurylinklabs.watchtower.enable=true"
+        networks:
+            - lfs-network
 
     watchtower:
         container_name: watchtower
@@ -19,3 +21,10 @@ services:
             - "com.centurylinklabs.watchtower.enable=false"
         ports:
             - "9000:8080"
+        networks:
+            - lfs-network
+
+
+networks:
+    lfs-network:
+        driver: bridge
