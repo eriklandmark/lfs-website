@@ -25,7 +25,7 @@
 
             v-carousel-item()
                 v-card(height='100%' flat :rounded="false")
-                    v-img(src="/images/cars/race_track.png" height='100%')
+                    v-img(src="/images/cars/car_2007_side.jpg" height='100%')
                         v-sheet(style="background: rgba(3, 32, 64, 0.8)" height="100%" )
                             v-container.fill-height
                                 v-row.my-16(align="center" justify="end" )

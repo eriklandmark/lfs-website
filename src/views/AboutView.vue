@@ -49,16 +49,19 @@
                             template(v-slot:opposite)
                                 h3 {{ $t('about.history.2022_autumn.title') }}
                             v-card
+                                v-card-title(v-if="$vuetify.breakpoint.smAndDown") {{ $t('about.history.2022_autumn.title') }}
                                 v-card-text(style="color: black !important") {{ $t('about.history.2022_autumn.description') }}
                         v-timeline-item(color='accent' fill-dot right)
                             template(v-slot:opposite)
                                 h3 {{ $t('about.history.2022_summer.title') }}
                             v-card
+                                v-card-title(v-if="$vuetify.breakpoint.smAndDown") {{ $t('about.history.2022_summer.title') }}
                                 v-card-text(style="color: black !important") {{ $t('about.history.2022_summer.description') }}
                         v-timeline-item(color='accent' fill-dot left)
                             template(v-slot:opposite)
-                                h3 2007
+                                h3 {{ $t('about.history.2007.title') }}
                             v-card
+                                v-card-title(v-if="$vuetify.breakpoint.smAndDown") {{ $t('about.history.2007.title') }}
                                 v-card-text
                                     v-img(src="/images/cars/car_2007_profile.jpg" contain alt="" max-height="250px")
                                 v-card-text(style="color: black !important") {{ $t('about.history.2007.description') }}
@@ -79,8 +82,9 @@
                                     br
                         v-timeline-item(color='accent' fill-dot right)
                             template(v-slot:opposite)
-                                h3 2006
+                                h3 {{ $t('about.history.2006.title') }}
                             v-card
+                                v-card-title(v-if="$vuetify.breakpoint.smAndDown") {{ $t('about.history.2006.title') }}
                                 //v-card-text
                                     v-img(src="/images/cars/car-empty.jpg" contain alt="" max-height="250px")
                                 v-card-text(style="color: black !important") {{ $t('about.history.2006.description') }}
