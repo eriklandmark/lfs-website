@@ -1,5 +1,6 @@
 services:
     web:
-        container_name: eriklandmark/lfs-website:latest
+        container_name: website
+        image: eriklandmark/lfs-website:release
         ports:
             -   "3000:3000"
