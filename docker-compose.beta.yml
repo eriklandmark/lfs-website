@@ -1,6 +1,7 @@
 services:
     web:
-        container_name: eriklandmark/lfs-website:beta
+        container_name: website
+        image: eriklandmark/lfs-website:beta
         ports:
             -   "3001:3000"
         labels:
