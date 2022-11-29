@@ -13,6 +13,6 @@ COPY serve.json /serve.json
 COPY public /public
 COPY src /src
 
-RUN npm run build
+RUN npm run vue:build
 
 CMD npm run prod
