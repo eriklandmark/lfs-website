@@ -1,6 +1,9 @@
 services:
     web:
         container_name: website
-        image: eriklandmark/lfs-website:release
+        image: lfs-website:beta
+        build: .
         ports:
-            -   "3000:3000"
+            - "3000:3000"
+        environment:
+            -   VUE_APP_ENV=release
