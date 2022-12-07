@@ -1,9 +1,24 @@
 {
+    "button": {
+        "close": "Stäng"
+    },
+    "error_codes": {
+        "404": {
+            "title": "404",
+            "description": "Den begärda sidan kunde inte hittas."
+        },
+        "403": {
+            "title": "403",
+            "description": "Du har inte behörighet att komma åt den här sidan. Du kanske inte är inloggad?"
+        }
+    },
     "main_title_tabs": {
         "home_tab": "Hem",
-        "about_tab": "Om Oss",
+        "about_tab": "Om",
         "contact_tab": "Kontakt",
-        "recruitment_tab": "Rekrytering"
+        "recruitment_tab": "Rekrytering",
+        "about_association_tab": "Om Föreningen",
+        "history_tab": "Historia"
     },
     "footer": {
         "resources_title": "Resurser",
@@ -20,6 +35,10 @@
             "title": "Nu är vi igång!",
             "description": "Nu har vi äntligen kommit igång och vi hoppas att ni vill vara med på vår resa! Kolla gärna in våra sociala kanaler för att hålla er uppdaterade med allt som händer i Luleå Formula Racing"
         },
+        "history_section": {
+            "title": "Kolla in tidigare bilar",
+            "description": "LTU har tidigare år haft ett racinglag som tävlat i Formula Student i ett antal år. Kolla in på deras historia och lär dig lite mer om de tidigare bilarna genom att klicka på knappen nedan!"
+        },
         "about_section": {
             "title": "Om Oss",
             "description": "Vi är Luleå Formula Student och vi arbetar aktivt med att utveckla och ta fram en tävlingsbar formelbil, där vårt fokus ligger på att både utveckla en bil samtidigt oss själva som blivande ingenjörer. Klicka gärna på knappen nedan för att läsa mer om oss och vår resa."
@@ -32,36 +51,6 @@
     "about": {
         "title": "Om Oss",
         "description": "Luleå Formula Student är en nystartad förening som har som mål att skapa och utveckla en formelbil som ska delta i olika tävlingar runt om i världen.",
-        "history": {
-            "title": "Historia",
-            "description": "",
-            "car_specs": {
-                "title": "Bilens specifikationer:",
-                "weight": "Vikt: {weight} kg",
-                "engine": "Motor: {engine}",
-                "hp": "Hästkrafter: {hp} hp",
-                "power": "Effekt: {power} kW",
-                "torque": "Vridmoment: {torque} Nm",
-                "zeroToHundred": "0-100 km/h: {zeroToHundred} sekunder",
-                "topSpeed": "Topphastighet: {topSpeed} km/h"
-            },
-            "2006": {
-                "title": "2006",
-                "description": "Tidigare har projektet funnits på LTU och varit ett utav SIRIUS projekten. År 2006 kom årets bil från LTU på 13:e plats av 59 tävlande lag på tävlingien i Silverstone, England."
-            },
-            "2007": {
-                "title": "2007",
-                "description": "År 2007 återanvände man den förra bilen och byggde vidare och förbättrade. På bilden visas den senaste och sista upplagan av LTU's medverkan i Formula Student då projektet lades ner år 2008."
-            },
-            "2022_summer": {
-                "title": "Sommaren 2022",
-                "description": "Innan sommaren kände en grupp studenter att det var tråkigt att det inte fanns något formelbilsprojekt på LTU. Därför bestämde de sig för att starta upp ett nytt projektförening och nu är vi igång!"
-            },
-            "2022_autumn": {
-                "title": "Hösten 2022",
-                "description": "Under hösten skapades föreningen och på första årsmötet röstades in en ny styrelse med 8 st och med hjälp av 24 st medlemmar ska de nu ta fram och utveckla en bil som ska tävla i Formula Student."
-            }
-        },
         "team": {
             "title": "Träffa lagen",
             "titles": {
@@ -102,6 +91,44 @@
         },
         "links": {
             "title": "Läsbara länkar"
+        }
+    },
+    "history": {
+        "title": "Vår Historia",
+        "description": "",
+        "earlier_cars": {
+            "title": "Bilar från tidigare år",
+            "description": "LTU har under tidigare år varit med och tävlat i Formula Student. Då har projektet utförts v studenter genom genom att vara ett utav SIRIUS-projekten för sistaårsstudenterna för maskinteknik och en grupp studenter från systemvetenskap. Här kan du läsa mer om bilarna som har tävlat tidigare år."
+        },
+        "car_specs": {
+            "title": "Bilens specifikationer:",
+            "weight": "Vikt: {weight} kg",
+            "engine": "Motor: {engine}",
+            "hp": "Hästkrafter: {hp} hp",
+            "power": "Effekt: {power} kW",
+            "torque": "Vridmoment: {torque} Nm",
+            "zeroToHundred": "0-100 km/h: {zeroToHundred} sekunder",
+            "topSpeed": "Topphastighet: {topSpeed} km/h"
+        },
+        "2005": {
+            "title": "2005",
+            "description": "Bilen från år 2005 är antagligen den äldsta av bilarna som fortfarande idag finns kvar även i näst intill i körbart skick."
+        },
+        "2006": {
+            "title": "2006",
+            "description": "År 2006 kom årets bil från LTU på 13:e plats av 59 tävlande lag på tävlingen i Silverstone, England."
+        },
+        "2007": {
+            "title": "2007",
+            "description": "År 2007 återanvände man den förra bilen och byggde vidare och förbättrade. På bilden visas den senaste och sista upplagan av LTU's medverkan i Formula Student då projektet lades ner år 2008. Denna bil finns även kvar idag och är på display i E-Huset"
+        },
+        "2022_summer": {
+            "title": "Sommaren 2022",
+            "description": "Innan sommaren kände en grupp studenter att det var tråkigt att det inte fanns något formelbilsprojekt på LTU. Därför bestämde de sig för att starta upp ett nytt projektförening och nu är vi igång!"
+        },
+        "2022_autumn": {
+            "title": "Hösten 2022",
+            "description": "Under hösten skapades föreningen och på första årsmötet röstades in en ny styrelse med 8 st och med hjälp av 24 st medlemmar ska de nu ta fram och utveckla en bil som ska tävla i Formula Student."
         }
     },
     "contact": {
