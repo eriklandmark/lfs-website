@@ -8,8 +8,8 @@
             show-arrows-on-hover
             interval="10000"
             )
-            v-carousel-item()
-                v-card(height='100%' flat :rounded="false")
+            v-carousel-item
+                v-card(height='100%' flat).no-rounded-corners
                     v-img(src="/images/cars/car_2007_back_zoom.jpg" height='100%')
                         v-sheet(style="background: rgba(3, 32, 64, 0.8)" height="100%" )
                             v-container.fill-height
@@ -23,12 +23,27 @@
                                                 v-btn.mt-8(color="primary" dark large to="/recruitment") {{$t('home.read_more_text')}}
                                                 v-spacer
 
-            v-carousel-item()
-                v-card(height='100%' flat :rounded="false")
+            v-carousel-item
+                v-card(height='100%' flat).no-rounded-corners
                     v-img(src="/images/cars/car_2007_side.jpg" height='100%')
                         v-sheet(style="background: rgba(3, 32, 64, 0.8)" height="100%" )
                             v-container.fill-height
                                 v-row.my-16(align="center" justify="end" )
+                                    v-col(cols="12" md="6")
+                                        v-sheet(color="transparent" dark)
+                                            v-card-title(style="font-size: 2em").font-weight-bold {{$t('home.history_section.title')}}
+                                            v-card-text(style="font-size: 1.2em") {{$t('home.history_section.description')}}
+                                            v-card-actions.align-center
+                                                v-spacer
+                                                v-btn.mt-8(color="primary" dark large to="/history") {{$t('home.read_more_text')}}
+                                                v-spacer
+
+            v-carousel-item
+                v-card(height='100%' flat).no-rounded-corners
+                    v-img(src="/images/slideshow_bgs/ss_bg_1.jpg" height='100%')
+                        v-sheet(style="background: rgba(3, 32, 64, 0.9)" height="100%" )
+                            v-container.fill-height
+                                v-row.my-16(align="center" justify="start" )
                                     v-col(cols="12" md="6")
                                         v-sheet(color="transparent" dark)
                                             v-card-title(style="font-size: 2em").font-weight-bold {{$t('home.started_section.title')}}
@@ -87,5 +102,9 @@ export default class HomeView extends Vue {
     height: 100%;
     color: white;
     font-size: 4rem;
+}
+
+.no-rounded-corners {
+    border-radius: 0 !important;
 }
 </style>
