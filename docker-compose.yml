@@ -1,6 +1,5 @@
 services:
     web:
-        container_name: website
         image: lfs-website:beta
         build: .
         ports:
