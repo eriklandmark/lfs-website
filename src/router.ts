@@ -9,6 +9,8 @@ import NotFoundView from "@/views/NotFoundView.vue";
 import RecruitmentView from "@/views/RecruitmentView.vue";
 import SearchView from "@/views/SearchView.vue";
 import {search_store} from "@/stores/search_store";
+import HistoryView from "@/views/HistoryView.vue";
+import NotAuthView from "@/views/NotAuthView.vue";
 
 Vue.use(VueRouter)
 
@@ -27,6 +29,14 @@ const routes: Array<RouteConfig> = [
         component: AboutView,
         meta: {
             title: 'About'
+        }
+    },
+    {
+        path: '/history',
+        name: 'history',
+        component: HistoryView,
+        meta: {
+            title: 'History'
         }
     },
     {
@@ -67,6 +77,14 @@ const routes: Array<RouteConfig> = [
         component: SearchView,
         meta: {
             title: 'Search'
+        }
+    },
+    {
+        path: '/403',
+        name: 'not-auth',
+        component: NotAuthView,
+        meta: {
+            title: '404 - Not Authorized'
         }
     },
     {
