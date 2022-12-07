@@ -27,6 +27,7 @@ export default class GdprCookieBanner extends Vue {
 
     accept() {
         this.show = false
+        this.$gtag.optIn()
         this.setCookie('analytics-tracking','true',30)
     }
 
