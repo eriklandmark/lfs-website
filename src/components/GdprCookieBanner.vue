@@ -20,10 +20,9 @@ export default class GdprCookieBanner extends Vue {
 
     mounted() {
         const is_bot = /bot|google|baidu|bing|msn|teoma|slurp|yandex/i.test(navigator.userAgent)
+
         if (this.getCookie('analytics-tracking') == null
             && process.env.NODE_ENV === 'production'
-            && process.env.VUE_APP_ENV
-            && process.env.VUE_APP_ENV === "release"
             && !is_bot ) {
             this.show = true;
         }
@@ -61,7 +60,7 @@ export default class GdprCookieBanner extends Vue {
                 return c.substring(name.length, c.length);
             }
         }
-        return "";
+        return null;
     }
 }
 </script>
