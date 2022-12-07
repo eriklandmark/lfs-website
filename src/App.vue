@@ -18,10 +18,17 @@
                 style="margin-left: 5vw"
                 @click="$router.push('/')")
             template(v-if="$vuetify.breakpoint.mdAndUp")
-                v-tabs(right color="accent" style="margin-right: 2vw")
+                v-tabs(v-model="tab" right color="accent" style="margin-right: 2vw")
                     v-tabs-slider
                     v-tab(to="/") {{ $t("main_title_tabs.home_tab") }}
-                    v-tab(to="/about") {{ $t("main_title_tabs.about_tab") }}
+                    v-menu(offset-y nudge-top="-8" transition="slide-y-transition")
+                        template(v-slot:activator="{ on, attrs }")
+                            v-tab(v-bind="attrs" v-on="on") {{ $t("main_title_tabs.about_tab") }}
+                                v-icon mdi-menu-down
+                        v-list.app-bar-menu.pa-0
+                            v-list-item(to="/about") {{ $t("main_title_tabs.about_association_tab") }}
+                            v-list-item(to="/history") {{ $t("main_title_tabs.history_tab") }}
+
                     v-tab(to="/recruitment") {{ $t("main_title_tabs.recruitment_tab") }}
                     v-tab(to="/contact") {{ $t("main_title_tabs.contact_tab") }}
 
@@ -30,7 +37,7 @@
 
             v-menu(offset-y)
                 template(v-slot:activator="{ on, attrs }")
-                    v-btn(icon v-bind="attrs" v-on="on" :style="$vuetify.breakpoint.mdAndUp? 'margin-right: 5vw':'margin-right: 8px'" small width="24px" height="24px")
+                    v-btn.mr-2(icon v-bind="attrs" v-on="on" small width="20px" height="20px")
                         v-img(v-if="language === 'en'" src="/images/flags/en_flag.png" width="18" contain alt="English")
                         v-img(v-if="language === 'sv'" src="/images/flags/sv_flag.png" width="18" contain alt="Swedish")
                 v-list
@@ -42,6 +49,9 @@
                         v-list-item-title Svenska
                         v-list-item-action
                             v-img(src="/images/flags/sv_flag.png" contain alt="Swedish" width="24" height="24")
+
+            //v-btn(icon @click="account_store.login()" :style="$vuetify.breakpoint.mdAndUp? 'margin-right: 5vw':''")
+                v-icon mdi-account
 
             template(v-if="search_store.show_search" v-slot:extension)
                 v-row(align="center" justify="center")
@@ -67,11 +77,23 @@
                         v-icon mdi-home
                     v-list-item-content
                         v-list-item-title {{ $t("main_title_tabs.home_tab") }}
-                v-list-item(to="/about")
-                    v-list-item-icon
-                        v-icon mdi-account
-                    v-list-item-content
-                        v-list-item-title {{ $t("main_title_tabs.about_tab") }}
+                v-list-group
+                    template(v-slot:activator)
+                        v-list-item.px-0
+                            v-list-item-icon
+                                v-icon mdi-information
+                            v-list-item-content
+                                v-list-item-title {{ $t("main_title_tabs.about_tab") }}
+                    v-list-item(to="/about")
+                        v-list-item-icon
+                            v-icon mdi-information
+                        v-list-item-content
+                            v-list-item-title {{ $t("main_title_tabs.about_association_tab") }}
+                    v-list-item(to="/history")
+                        v-list-item-icon
+                            v-icon mdi-history
+                        v-list-item-content
+                            v-list-item-title {{ $t("main_title_tabs.history_tab") }}
                 v-list-item(to="/recruitment")
                     v-list-item-icon
                         v-icon mdi-account-multiple-plus
@@ -119,16 +141,20 @@
 import {Component, Vue, Watch} from 'vue-property-decorator';
 import GdprCookieBanner from "@/components/GdprCookieBanner.vue";
 import {search_store} from "@/stores/search_store";
+import {account_store} from "@/stores/account_store";
 
 @Component({
     components: {GdprCookieBanner},
 })
 export default class App extends Vue {
     search_store = search_store()
+    account_store = account_store()
+
     drawer = false;
     search = '';
     language = 'sv';
     searchInvoked = false;
+    tab = 0;
 
     @Watch('search_store.show_search')
     onSearchShowChange() {
@@ -152,6 +178,10 @@ export default class App extends Vue {
     beforeMount() {
         if (this.$route.path === '/search') {
             this.search_store.show_search = true
+        }
+
+        if (this.$route.path === '/about' || this.$route.path === '/history') {
+            this.tab = 1
         }
     }
 
@@ -181,10 +211,18 @@ html {
     font-family: "Raleway", sans-serif !important;
 }
 
+.app-bar-menu {
+    .v-list-item--active {
+        font-weight: 700 !important;
+    }
+}
+
 .v-app-bar {
     .v-tab.v-tab--active {
         font-weight: 700 !important;
     }
+
+
 
     .v-tab {
         font-weight: 400 !important;
@@ -197,8 +235,6 @@ html {
 }
 
 .v-application {
-
-
     [class*='text-'], [class*='font-'] {
         font-family: $body-font-family, sans-serif !important;
     }
