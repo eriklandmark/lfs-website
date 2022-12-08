@@ -13,6 +13,9 @@ COPY serve.json /serve.json
 COPY public /public
 COPY src /src
 
+ARG VUE_APP_ENV
+ENV VUE_APP_ENV $VUE_APP_ENV
+
 RUN npm run vue:build
 
 CMD npm run prod

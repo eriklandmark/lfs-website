@@ -23,6 +23,8 @@ export default class GdprCookieBanner extends Vue {
 
         if (this.getCookie('analytics-tracking') == null
             && process.env.NODE_ENV === 'production'
+            && process.env.hasOwnProperty("VUE_APP_ENV")
+            && process.env.VUE_APP_ENV === "release"
             && !is_bot ) {
             this.show = true;
         }
