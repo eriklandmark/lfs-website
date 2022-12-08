@@ -28,8 +28,8 @@
     "home": {
         "read_more_text": "Läs mer",
         "recruit_section": {
-            "title": "Vi rekryterar!",
-            "description": "Vi rektryterar nya lagmedlemmar och lagledare! Om du är intresserad av att bli en del utav ett av lagen eller bli en styrelsemedlem, sök till oss genom att klicka på knappen nedan!"
+            "title": "Är du intresserad av att vara med?",
+            "description": "I nuläget rekryterar vi inte nya medlemmar men om du är intresserad av att bli en del utav föreningen, klicka på knappen nedan för att skicka in en intresseanmälan."
         },
         "started_section": {
             "title": "Nu är vi igång!",
@@ -37,7 +37,7 @@
         },
         "history_section": {
             "title": "Kolla in tidigare bilar",
-            "description": "LTU har tidigare år haft ett racinglag som tävlat i Formula Student i ett antal år. Kolla in på deras historia och lär dig lite mer om de tidigare bilarna genom att klicka på knappen nedan!"
+            "description": "LTU har tidigare år haft ett racinglag som tävlat i Formula Student i ett antal år. Kolla in deras historia och lär dig lite mer om de tidigare bilarna genom att klicka på knappen nedan!"
         },
         "about_section": {
             "title": "Om Oss",
@@ -140,8 +140,11 @@
     },
     "recruitment": {
         "title": "Rekrytering",
-        "description": "Nedan hittar du ett formulär för att ansöka till en eller flera utav rollerna. Har du några funderingar kring ansökningen går det självklart bra att kontakta oss. Vi söker just nu de följande rollerna",
-        "roll_description": "(Du kan klicka på varje roll för att komma vidare till en mer detaljerad beskrivning av rollen.)"
+        "description": [
+            "Kul att du är intresserad av att vara med i Luleå Formula Student! I nuläget rekryterar vi inte nya medlemmar men vi vill gärna komma i kontakt med dig när vi rekryterar igen. Fyll i dina kontaktuppgifter i formuläret nedan så kontaktar vi dig när vi öppnar upp för nya medlemmar.",
+            "Till dess kan du läsa mer om föreningen och tidigare projekt och bilar som har gjorts på LTU, länk finns nedan. Om du har frågor eller funderingar är du välkommen att kontakta oss."],
+        "roll_description": "(Du kan klicka på varje roll för att komma vidare till en mer detaljerad beskrivning av rollen.)",
+        "to_teams_button": "Till våra team"
     },
     "search": {
         "title": "Sök",
