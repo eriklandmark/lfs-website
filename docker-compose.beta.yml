@@ -1,11 +1,13 @@
 services:
     web:
         image: lfs-website:beta
-        build: .
+        build:
+            context: .
+            args:
+                - VUE_APP_ENV=beta
         ports:
             -   "3001:3000"
-        args:
-            - VUE_APP_ENV=beta
+
     redeploy:
         container_name: redeploy
         image: redeploy:latest
