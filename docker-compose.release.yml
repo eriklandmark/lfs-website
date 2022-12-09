@@ -1,0 +1,10 @@
+services:
+    web:
+        image: lfs-website:release
+        container_name: lfs-website-release
+        build:
+            context: .
+            args:
+                - VUE_APP_ENV=release
+        ports:
+            - "3000:3000"
