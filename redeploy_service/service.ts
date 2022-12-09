@@ -7,7 +7,7 @@ const server = http.createServer(async (req: any, res: any) => {
     try {
         console.log("Received request to update service");
         await exec("cd repo && git pull")
-        await exec(`cd repo && docker compose down ${service}`)
+        await exec(`cd repo && docker compose rm -s -v ${service}`)
         await exec(`cd repo && docker compose up -d --build ${service}`)
         console.log("Request processed");
     } catch (error) {
