@@ -1,0 +1,17 @@
+name: remote ssh command
+on:
+    push:
+        branches:
+            - develop
+jobs:
+    build:
+        name: Deploy to server
+        runs-on: ubuntu-latest
+        steps:
+            - name: Connect to server
+              uses: appleboy/ssh-action@v0.1.6
+              with:
+                  host: ${{ secrets.SSH_HOST }}
+                  username: ${{ secrets.SSH_USER }}
+                  password: ${{ secrets.SSH_PASSWORD }}
+                  script: cd lfs-website-beta/tools && chmod +x redeploy_beta.sh && ./redeploy_beta.sh

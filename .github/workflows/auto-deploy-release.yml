@@ -2,7 +2,7 @@ name: remote ssh command
 on:
     push:
         branches:
-            - develop
+            - main
 jobs:
     build:
         name: Deploy to server
@@ -14,4 +14,4 @@ jobs:
                   host: ${{ secrets.SSH_HOST }}
                   username: ${{ secrets.SSH_USER }}
                   password: ${{ secrets.SSH_PASSWORD }}
-                  script: cd lfs-website-beta/tools && chmod +x redeploy.sh && ./redeploy.sh
+                  script: cd lfs-website-beta/tools && chmod +x redeploy_release.sh && ./redeploy_release.sh
