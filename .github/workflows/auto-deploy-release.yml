@@ -14,4 +14,4 @@ jobs:
                   host: ${{ secrets.SSH_HOST }}
                   username: ${{ secrets.SSH_USER }}
                   password: ${{ secrets.SSH_PASSWORD }}
-                  script: cd lfs-website-beta/tools && chmod +x redeploy_release.sh && ./redeploy_release.sh
+                  script: cd lfs-website/tools && chmod +x redeploy_release.sh && ./redeploy_release.sh
