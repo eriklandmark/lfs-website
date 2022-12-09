@@ -8,15 +8,3 @@ services:
                 - VUE_APP_ENV=beta
         ports:
             -   "3001:3000"
-
-    redeploy:
-        container_name: redeploy
-        image: redeploy:latest
-        build: ./redeploy_service
-        ports:
-            -   "3002:3000"
-        volumes:
-            -   /var/run/docker.sock:/var/run/docker.sock
-            -   ./:/repo
-        environment:
-            -   REDEPLOY_SERVICE=web
