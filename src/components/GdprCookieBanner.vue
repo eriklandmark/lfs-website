@@ -18,7 +18,7 @@ import {Component, Vue} from 'vue-property-decorator';
 export default class GdprCookieBanner extends Vue {
     show = false;
 
-    mounted() {
+    beforeMount() {
         const is_bot = /bot|google|baidu|bing|msn|teoma|slurp|yandex/i.test(navigator.userAgent)
 
         if (this.getCookie('analytics-tracking') == null
@@ -27,12 +27,15 @@ export default class GdprCookieBanner extends Vue {
             && process.env.VUE_APP_ENV === "release"
             && !is_bot ) {
             this.show = true;
+        } else if (this.getCookie('analytics-tracking') == "true") {
+            this.$gtag.optIn()
         }
     }
 
     accept() {
         this.show = false
         this.$gtag.optIn()
+        this.$gtag.event('accept_gdpr')
         this.setCookie('analytics-tracking','true',30)
     }
 
