@@ -14,4 +14,4 @@ jobs:
                   host: ${{ secrets.SSH_HOST }}
                   username: ${{ secrets.SSH_USER }}
                   password: ${{ secrets.SSH_PASSWORD }}
-                  script: sudo lfs-website-beta/redeploy.sh
+                  script: lfs-website-beta/redeploy.sh

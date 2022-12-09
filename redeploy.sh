@@ -1,3 +1,3 @@
-sudo docker compose down
+docker compose down
 git pull
-sudo docker compose up -d --build
+docker compose up -d --build
