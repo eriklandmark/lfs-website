@@ -11,7 +11,7 @@ jobs:
             - name: Connect to server
               uses: appleboy/ssh-action@v0.1.6
               with:
-                  host: ${{ secrets.HOST }}
-                  username: ${{ secrets.USERNAME }}
-                  password: ${{ secrets.PASSWORD }}
+                  host: ${{ secrets.SSH_HOST }}
+                  username: ${{ secrets.SSH_USER }}
+                  password: ${{ secrets.SSH_PASSWORD }}
                   script: lfs-website-beta/redeploy.sh
