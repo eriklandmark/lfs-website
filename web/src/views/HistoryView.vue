@@ -85,6 +85,13 @@
                                     br
                                     span {{ $t('history.car_specs.hp', {hp: "ca 100"}) }}
                                     br
+            v-row.my-8(align="center")
+                v-col
+                    h1.mb-4 {{$t('about.links.title')}}
+                    ul
+                        li(v-for="link in links" :key="link.title")
+                            a(:href="link.href" target="_blank") {{ link.title }}
+
 
 </template>
 
@@ -95,6 +102,16 @@ import {Component, Vue} from 'vue-property-decorator';
     components: {},
 })
 export default class HistoryView extends Vue {
+    links = [
+        {
+            title: "https://www.nyteknik.se/fordon/studenter-start-your-engines-6413179",
+            href: "https://www.nyteknik.se/fordon/studenter-start-your-engines-6413179"
+        },
+        {
+            title: "https://rejsa.nu/forum/viewtopic.php?t=28732",
+            href: "https://rejsa.nu/forum/viewtopic.php?t=28732"
+        }
+    ]
 }
 </script>
 

@@ -39,9 +39,9 @@
             "title": "Kolla in tidigare bilar",
             "description": "LTU har tidigare år haft ett racinglag som tävlat i Formula Student i ett antal år. Kolla in deras historia och lär dig lite mer om de tidigare bilarna genom att klicka på knappen nedan!"
         },
-        "about_section": {
-            "title": "Om Oss",
-            "description": "Vi är Luleå Formula Student och vi arbetar aktivt med att utveckla och ta fram en tävlingsbar formelbil, där vårt fokus ligger på att både utveckla en bil samtidigt oss själva som blivande ingenjörer. Klicka gärna på knappen nedan för att läsa mer om oss och vår resa."
+        "this_is_section": {
+            "title": "Det här är Luleå Formula Student",
+            "description": "Luleå Formula Student är en studentdriven organisation med ambitionen att leda produktionen och utvecklingen av en formelbil. Plattformen skapar möjlighet för ingenjörsstudenter att arbeta som ett team och att utveckla en suverän produkt inom fordonsindustrin. 2022 startar det nya formelstudentteamet vid Luleå tekniska universitet. Läs mer om oss och vår resa nedan."
         },
         "contact_section": {
             "title": "Kontakta oss",
@@ -52,11 +52,11 @@
         "title": "Om Oss",
         "description": "Luleå Formula Student är en nystartad förening som har som mål att skapa och utveckla en formelbil som ska delta i olika tävlingar runt om i världen.",
         "team": {
-            "title": "Träffa lagen",
+            "title": "Våra lag",
             "titles": {
                 "project-leader": "Projekledare",
                 "technical-leader": "Teknikledare",
-                "team-leader": "Lagledare",
+                "team-leader": "Lagledare | Lagledare",
                 "team-member": "Lagmedlem",
                 "hr-manager": "HR-ansvarig"
             },
@@ -142,7 +142,7 @@
         "title": "Rekrytering",
         "description": [
             "Kul att du är intresserad av att vara med i Luleå Formula Student! I nuläget rekryterar vi inte nya medlemmar men vi vill gärna komma i kontakt med dig när vi rekryterar igen. Fyll i dina kontaktuppgifter i formuläret nedan så kontaktar vi dig när vi öppnar upp för nya medlemmar.",
-            "Till dess kan du läsa mer om föreningen och tidigare projekt och bilar som har gjorts på LTU, länk finns nedan. Om du har frågor eller funderingar är du välkommen att kontakta oss."],
+            "Till dess kan du läsa mer om föreningen och tidigare projekt och bilar som har gjorts på LTU. Om du har frågor eller funderingar är du välkommen att kontakta oss."],
         "roll_description": "(Du kan klicka på varje roll för att komma vidare till en mer detaljerad beskrivning av rollen.)",
         "to_teams_button": "Till våra team"
     },

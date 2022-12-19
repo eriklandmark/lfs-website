@@ -63,52 +63,23 @@
 
 <script lang="ts">
 import {Component, Vue} from 'vue-property-decorator';
+import organization_data from "@/assets/organization_data";
 
 @Component({
     components: {},
 })
 export default class ContactView extends Vue {
-    board = [
-        {
-            name: "Jacob Höglund",
-            title: this.$t("about.team.titles.project-leader").toString(),
-            email: "jacob.hoglund@luleafs.se",
-        },
-        /*{
-            name: "Samuel Höglund",
-            title: this.$t("about.team.titles.technical-leader").toString(),
-        },*/
-        {
-            name: "Erik Landmark",
-            title: this.$t("about.team.titles.technical-leader").toString(),
-            email: "erik.landmark@luleafs.se"
-        },
-        {
-            name: "Max Wiberg",
-            title: `${this.$t("about.team.titles.team-leader").toString()} - ${this.$t("about.team.administration.title").toString()}`,
-            email: "max.wiberg@luleafs.se",
-        },
-        {
-            name: "Sannah Engelin",
-            title: `${this.$t("about.team.titles.hr-manager")}`,
-            email: "sannah.engelin@luleafs.se",
-        },
-        /*{
-            name: "Fabian Dalenius",
-            title: `${this.$t("about.team.titles.team-leader").toString()} - ${this.$t("about.team.aerodynamics.title").toString()}`,
-        },
-        {
-            name: "Louise Lööf",
-            title: `${this.$t("about.team.titles.team-leader").toString()} - ${this.$t("about.team.chassis.title").toString()}`,
-        },
-        {
-            name: "Alec Berkien",
-            title: `${this.$t("about.team.titles.team-leader").toString()} - ${this.$t("about.team.vehicle-dynamics.title").toString()}`,
-        },
-        {
-            name: "David Englund",
-            title: `${this.$t("about.team.titles.team-leader").toString()} - ${this.$t("about.team.power-train.title").toString()}`,
-        }*/]
+
+    board_filter = [
+        "Jacob Höglund",
+        "Erik Landmark",
+        "Max Wiberg",
+        "Sannah Engelin"
+    ]
+
+    get board() {
+        return organization_data()[0].members.filter((member: any) => this.board_filter.includes(member.name))
+    }
 }
 </script>
 
