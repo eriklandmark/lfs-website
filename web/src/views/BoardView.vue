@@ -19,9 +19,11 @@
                         | {{$t('button.back')}}
                     .my-5 {{team.about}}
             v-row.mb-8(justify="center")
-                v-col(cols="10")
+                v-col(cols="10" sm="8")
+                    v-row.mt-4.mb-6(justify="center")
+                        h1.center-text {{$t('about.team.titles.upper_management')}}
                     v-row(justify="center")
-                        v-col.avatar(cols="9" sm="5" md="4" lg="3" xl="2" v-for="member in get_full_team(team)" :key="member.name" @click="openDialog(member)")
+                        v-col.avatar(cols="9" sm="5" md="4" lg="4" xl="2" v-for="member in upper_management" :key="member.name" @click="openDialog(member)")
                             v-img.img(v-if="member.avatar !== 'none'"
                                 :src="member.avatar"
                                 :alt="member.name + ' - ' + member.title"
@@ -32,8 +34,35 @@
                                 span.font-weight-bold(style="font-size: 1em;") {{ member.name }}
                                 br
                                 span(style="font-size: 0.8em;") {{ member.title }}
-            //v-row.pa-10(v-if="team.group_photo")
-                v-img(:src="team.group_photo" :alt="team.title" width="70%" height="auto")
+
+                    v-row.mt-10.mb-6(justify="center")
+                        h1.center-text {{$tc('about.team.titles.team-leader', 2)}}
+                    v-row(justify="center")
+                        v-col.avatar(cols="9" sm="5" md="4" lg="4" xl="2" v-for="member in team_leaders" :key="member.name" @click="openDialog(member)")
+                            v-img.img(v-if="member.avatar !== 'none'"
+                                :src="member.avatar"
+                                :alt="member.name + ' - ' + member.title"
+                                width="100%")
+                            .none-avatar.fill(v-else)
+                                v-icon.icon(x-large) mdi-account
+                            .ml-1.mt-2
+                                span.font-weight-bold(style="font-size: 1em;") {{ member.name }}
+                                br
+                                span(style="font-size: 0.8em;") {{ member.title }}
+                    v-row.mt-10.mb-6(justify="center")
+                        h1.center-text {{$t('about.team.titles.human_resources')}}
+                    v-row(justify="center")
+                        v-col.avatar(cols="9" sm="5" md="4" lg="4" xl="2" v-for="member in human_resources" :key="member.name" @click="openDialog(member)")
+                            v-img.img(v-if="member.avatar !== 'none'"
+                                :src="member.avatar"
+                                :alt="member.name + ' - ' + member.title"
+                                width="100%")
+                            .none-avatar.fill(v-else)
+                                v-icon.icon(x-large) mdi-account
+                            .ml-1.mt-2
+                                span.font-weight-bold(style="font-size: 1em;") {{ member.name }}
+                                br
+                                span(style="font-size: 0.8em;") {{ member.title }}
 
 </template>
 
@@ -46,12 +75,12 @@ import SelectedPersonDialog from "@/components/SelectedPersonDialog.vue";
 @Component({
     components: {SelectedPersonDialog, Parallax},
 })
-export default class TeamView extends Vue {
+export default class BoardView extends Vue {
     dialog = false
     selected_person = {}
 
     get team() {
-        return this.mtt_data.find((team) => team.href === this.$route.params.team);
+        return organization_data()[0];
     }
 
     openDialog(person: any) {
@@ -59,16 +88,20 @@ export default class TeamView extends Vue {
         this.dialog = true
     }
 
-    get_full_team(team: any) {
-        if(team.href == "board") {
-            return team.members
-        } else {
-            return [this.mtt_data[0].members.find((member: any) => member.hasOwnProperty("team") && member.team === team.href), ...team.members]
-        }
+    get upper_management() {
+        return this.team.members.slice(0, 3)
     }
 
-    get mtt_data() {
-        return organization_data()
+    get team_leaders() {
+        return this.team.members.slice(3, 9)
+    }
+
+    get human_resources() {
+        return this.team.members.slice(9, 10)
+    }
+
+    get_full_team(team: any) {
+        return team.members
     }
 }
 </script>

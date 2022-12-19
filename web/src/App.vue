@@ -238,8 +238,6 @@ html {
         font-weight: 700 !important;
     }
 
-
-
     .v-tab {
         font-weight: 400 !important;
         color: black !important;
@@ -286,7 +284,7 @@ html {
     border-radius: 0 !important;
 }
 
-.expand_on_hover {
+.expand-on-hover {
     transition: all 0.2s ease-in-out;
 
     &:hover {

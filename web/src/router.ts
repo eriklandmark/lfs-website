@@ -12,6 +12,7 @@ import {search_store} from "@/stores/search_store";
 import HistoryView from "@/views/HistoryView.vue";
 import NotAuthView from "@/views/NotAuthView.vue";
 import TeamView from "@/views/TeamView.vue";
+import BoardView from "@/views/BoardView.vue";
 
 Vue.use(VueRouter)
 
@@ -31,6 +32,14 @@ const routes: Array<RouteConfig> = [
         meta: {
             title: 'About'
         }
+    },
+    {
+        path: '/about/board',
+        name: 'board',
+        component: BoardView,
+        meta: {
+            title: 'The Board'
+        },
     },
     {
         path: '/about/:team',

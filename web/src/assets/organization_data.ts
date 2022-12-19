@@ -26,7 +26,8 @@ export default function () {
                         "Hello, my name is Samuel Höglund and I am from Borlänge. I study my fourth year as a mechanical engineering student. Through Formula Student, I want to realize my childhood dream of building a really fast racing car.",
                         "For me, Formula Student is a unique opportunity to collaborate with students from other academic fields and learn from others in order to develop. Which is why I brought Formula Student to life at LTU and hope to establish a solid foundation for future students involved in the project.",
                         "As Chief Technical Officer my responsibilities lie to extract as much potential from the car as possible making sure every component delivers as expected."
-                    ]
+                    ],
+                    linkedin: "https://www.linkedin.com/in/samuel-h%C3%B6glund-6500a0202/"
                 },
                 {
                     name: "Erik Landmark",
@@ -42,17 +43,6 @@ export default function () {
                     email: "erik.landmark@luleafs.se"
                 },
                 {
-                    name: "Sannah Engelin",
-                    title: `${i18n.t("about.team.titles.hr-manager").toString()}`,
-                    avatar: "/images/profile_pictures/board/hr_manager.png",
-                    texts: [
-                        "Hi, my name is Sannah Engelin, I come from Gothenburg and study my third year as a psychology candidate. I love skiing on my freetime and enjoy painting/sketching.",
-                        "As HR my role entails to arrange the recruitment of new team members as well as to ensure that every team maintains at a motivational level to deliver a top tier performance.",
-                        "I´m participating in formula student because it is a great opportunity for me to apply my theoretical knowledge in real-life situations. I hope to learn from the experience"
-                    ],
-                    email: "sannah.engelin@luleafs.se",
-                },
-                {
                     name: "Max Wiberg",
                     team: "administration",
                     title: `${i18n.tc("about.team.titles.team-leader", 1).toString()} - ${i18n.t("about.team.administration.title").toString()}`,
@@ -63,6 +53,7 @@ export default function () {
                         "As administration leader my role entails to operate formula student behind the scenes, making sure that every team has what they need to complete their work."
                     ],
                     email: "max.wiberg@luleafs.se",
+                    linkedin: "https://www.linkedin.com/in/maxwiberg/"
                 },
                 {
                     name: "Fabian Dalenius",
@@ -83,7 +74,8 @@ export default function () {
                         "Hello everyone! My name is Louise Lööf and I come from Uppsala. I am studying my second year here at LTU as a student of automotive engineering.",
                         "With having a great interest in motorsports combined with my studies, a project like this was obvious to participate in. I have a strong feeling that this project will contribute with useful knowledge that I will benefit from in the future.",
                         "My responsibilities as leader of the chassis team is to create a sustainable chassis for the vehicle that is suitable and adapted after what the other teams have developed. I as well supervise over the drivers safety in the car."
-                    ]
+                    ],
+                    linkedin: "https://www.linkedin.com/in/louise-l%C3%B6%C3%B6f-b148271b0/"
                 },
                 {
                     name: "David Englund",
@@ -105,7 +97,8 @@ export default function () {
                         "Hi, my name is Alec Berkien, I come from Malmö and study my fourth year as a mechanical engineering student. During my freetime I engage myself in RC cars/planes and play basketball.",
                         "I find dynamics as a very interesting subject which is why I applied for the role as Vehicle dynamic leader. My responsibilities regard the dynamical components of the car including suspension, steering, brakes and pedals",
                         "With LTU previously participating in formula student I thought it was sad that they laid off, which is why I engaged in the start-up of this project. I look forward to start developing the car and hope to establish a solid foundation of formula student here at LTU. "
-                    ]
+                    ],
+                    linkedin: "https://www.linkedin.com/in/alec-berkien-956821127/"
                 },
                 {
                     name: "Thomas Tillgren",
@@ -117,6 +110,18 @@ export default function () {
                         "I liked the idea of participating in a larger project and to put my knowledge to the test, which is why I joined formula student. I also look forward to establishing a new foundation for Formula Student at LTU.",
                         "As team leader of the low voltage system my task involves to develop a safety system for the vehicle. The work involves diagnosing problems and creating solutions that are safe to operate with."
                     ]
+                },
+                {
+                    name: "Sannah Engelin",
+                    title: `${i18n.t("about.team.titles.hr-manager").toString()}`,
+                    avatar: "/images/profile_pictures/board/hr_manager.png",
+                    texts: [
+                        "Hi, my name is Sannah Engelin, I come from Gothenburg and study my third year as a psychology candidate. I love skiing on my freetime and enjoy painting/sketching.",
+                        "As HR my role entails to arrange the recruitment of new team members as well as to ensure that every team maintains at a motivational level to deliver a top tier performance.",
+                        "I´m participating in formula student because it is a great opportunity for me to apply my theoretical knowledge in real-life situations. I hope to learn from the experience"
+                    ],
+                    email: "sannah.engelin@luleafs.se",
+                    linkedin: "https://www.linkedin.com/in/sannah-engelin-22aa32207/"
                 },
             ]
         },

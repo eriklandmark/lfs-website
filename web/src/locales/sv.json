@@ -3,6 +3,26 @@
         "close": "Stäng",
         "back": "Tillbaka"
     },
+    "datetime": {
+        "months": [
+            "Januari",
+            "Februari",
+            "Mars",
+            "April",
+            "Maj",
+            "Juni",
+            "Juli",
+            "Augusti",
+            "September",
+            "Oktober",
+            "November",
+            "December"
+        ],
+        "seconds_ago": "{count} sekunder sedan",
+        "minutes_ago": "{count} minuter sedan",
+        "hours_ago": "{count} timmar sedan",
+        "days_ago": "{count} dagar sedan"
+    },
     "error_codes": {
         "404": {
             "title": "404",
@@ -55,11 +75,13 @@
         "team": {
             "title": "Våra lag",
             "titles": {
+                "upper_management": "Högsta Ledningen",
                 "project-leader": "Projekledare",
                 "technical-leader": "Teknikledare",
                 "team-leader": "Lagledare | Lagledare",
                 "team-member": "Lagmedlem",
-                "hr-manager": "HR-ansvarig"
+                "hr-manager": "HR-ansvarig",
+                "human_resources": "Personalansvarig"
             },
             "board": {
                 "title": "Ledningsgruppen",

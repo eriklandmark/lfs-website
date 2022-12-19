@@ -13,7 +13,7 @@
             v-row(justify="center" ).px-10.mb-8
                 v-col(cols="11" lg="8" xl="7" md="7" sm="10")
                     v-row(justify="center")
-                        v-col(cols="12" sm="6" md="6" lg="4" xl="4")
+                        v-col.expand-on-hover(cols="12" sm="6" md="6" lg="4" xl="4")
                             v-card.team-card.no-rounded-corners(color="accent" dark to="/about/board")
                                 v-container(fill-height)
                                     v-row
@@ -24,7 +24,7 @@
                 v-col(cols="11" lg="8" xl="7" md="7" sm="10")
                     h1.center-text {{$t('about.team.title')}}
                     v-row.mt-4(justify="center")
-                        v-col(v-for="team in teams" :key="team.title" cols="12" sm="6" md="6" lg="4" xl="4")
+                        v-col.expand-on-hover(v-for="team in teams" :key="team.title" cols="12" sm="6" md="6" lg="4" xl="4")
                             v-card.no-rounded-corners.team-card(color="accent" dark :to="'/about/' + team.href")
                                 v-container(fill-height)
                                     v-row
@@ -98,11 +98,5 @@ export default class AboutView extends Vue {
 .team-card {
     aspect-ratio: 1/1;
     width: 100%;
-    box-sizing: border-box;
-    transition: all .2s ease-in-out;
-}
-
-.team-card:hover {
-    transform: scale(1.1);
 }
 </style>
