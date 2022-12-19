@@ -1,7 +1,7 @@
 <template lang="pug">
     v-app
         v-app-bar(app
-        color="white"
+            color="white"
             :height="$vuetify.breakpoint.mdAndUp? 100:56"
             :extension-height="search_store.show_search ? 100 : 0"
             extension-transition="fade-transition"
@@ -11,36 +11,36 @@
                 v-icon mdi-menu
             v-img.logo(src="/images/logos/logo-light.png"
                 contain
-                width="150px"
+                :width="$vuetify.breakpoint.smAndDown? '10px': '150px'"
                 alt="Logo"
                 max-height="60%"
                 eager
-                style="margin-left: 5vw"
+                :style="'margin-left:' + ($vuetify.breakpoint.smAndDown? '0px': '5vw')"
                 @click="$router.push('/')")
-            template(v-if="$vuetify.breakpoint.mdAndUp")
-                v-tabs(v-model="tab" right color="accent" style="margin-right: 2vw")
-                    v-tabs-slider
-                    v-tab(to="/") {{ $t("main_title_tabs.home_tab") }}
-                    v-menu(offset-y nudge-top="-8" transition="slide-y-transition")
-                        template(v-slot:activator="{ on, attrs }")
-                            v-tab(v-bind="attrs" v-on="on") {{ $t("main_title_tabs.about_tab") }}
-                                v-icon mdi-menu-down
-                        v-list.app-bar-menu.pa-0
-                            v-list-item(to="/about") {{ $t("main_title_tabs.about_association_tab") }}
-                            v-list-item(to="/history") {{ $t("main_title_tabs.history_tab") }}
 
-                    v-tab(to="/recruitment") {{ $t("main_title_tabs.recruitment_tab") }}
-                    v-tab(to="/contact") {{ $t("main_title_tabs.contact_tab") }}
+            v-tabs(v-if="$vuetify.breakpoint.mdAndUp" v-model="tab" right color="accent" style="margin-right: 2vw")
+                v-tabs-slider
+                v-tab(to="/") {{ $t("main_title_tabs.home_tab") }}
+                v-menu(offset-y nudge-top="-8" transition="slide-y-transition")
+                    template(v-slot:activator="{ on, attrs }")
+                        v-tab(v-bind="attrs" v-on="on") {{ $t("main_title_tabs.about_tab") }}
+                            v-icon mdi-menu-down
+                    v-list.app-bar-menu.pa-0
+                        v-list-item(to="/about") {{ $t("main_title_tabs.about_association_tab") }}
+                        v-list-item(to="/history") {{ $t("main_title_tabs.history_tab") }}
+
+                v-tab(to="/recruitment") {{ $t("main_title_tabs.recruitment_tab") }}
+                v-tab(to="/contact") {{ $t("main_title_tabs.contact_tab") }}
 
             v-btn.mr-2(icon @click.stop="search_store.show_search = !search_store.show_search")
                 v-icon(:color="search_store.show_search? 'accent': ''") mdi-magnify
 
-            v-menu(offset-y)
+            v-menu(offset-y nudge-top="-8" transition="slide-y-transition")
                 template(v-slot:activator="{ on, attrs }")
-                    v-btn.mr-2(icon v-bind="attrs" v-on="on" small width="20px" height="20px")
-                        v-img(v-if="language === 'en'" src="/images/flags/en_flag.png" width="18" contain alt="English")
-                        v-img(v-if="language === 'sv'" src="/images/flags/sv_flag.png" width="18" contain alt="Swedish")
-                v-list
+                    v-btn(icon v-bind="attrs" v-on="on" small width="20px" height="20px" style="margin-right: 2vw")
+                        v-img(v-if="language === 'en'" src="/images/flags/en_flag.png" width="24" contain alt="English")
+                        v-img(v-if="language === 'sv'" src="/images/flags/sv_flag.png" width="24" contain alt="Swedish")
+                v-list.pa-0
                     v-list-item(@click="language = 'en'")
                         v-list-item-title English
                         v-list-item-action
@@ -50,8 +50,20 @@
                         v-list-item-action
                             v-img(src="/images/flags/sv_flag.png" contain alt="Swedish" width="24" height="24")
 
-            //v-btn(icon @click="account_store.login()" :style="$vuetify.breakpoint.mdAndUp? 'margin-right: 5vw':''")
-                v-icon mdi-account
+            div(:style="$vuetify.breakpoint.mdAndUp? 'margin-right: 3vw':''")
+                v-btn(v-if="!account_store.is_logged_in" icon @click="account_store.login()")
+                    v-icon mdi-account
+                v-menu(v-else offset-y nudge-top="-8" transition="slide-y-transition")
+                    template(v-slot:activator="{ on, attrs }")
+                        v-btn(v-bind="attrs" v-on="on" icon)
+                            v-avatar(size="24")
+                                v-img(:src="account_store.account.photoURL" contain alt="Profile picture")
+                    v-list.pa-0
+                        v-list-item(@click="account_store.logout()")
+                            v-list-item-title Logga ut
+                            v-list-item-action
+                                v-icon mdi-logout
+
 
             template(v-if="search_store.show_search" v-slot:extension)
                 v-row(align="center" justify="center")
@@ -69,7 +81,7 @@
                             autofocus
                             @click:append-outer="do_search()"
                             @keyup.enter="do_search()")
-        gdpr-cookie-banner
+
         v-navigation-drawer(v-if="$vuetify.breakpoint.smAndDown" v-model="drawer" app clipped fixed temporary)
             v-list
                 v-list-item(to="/")
@@ -104,6 +116,9 @@
                         v-icon mdi-email
                     v-list-item-content
                         v-list-item-title {{ $t("main_title_tabs.contact_tab") }}
+
+        gdpr-cookie-banner
+        infobar
 
         v-main(app min-height="calc(100vh - 100px)")
             router-view
@@ -142,9 +157,10 @@ import {Component, Vue, Watch} from 'vue-property-decorator';
 import GdprCookieBanner from "@/components/GdprCookieBanner.vue";
 import {search_store} from "@/stores/search_store";
 import {account_store} from "@/stores/account_store";
+import Infobar from "@/components/Infobar.vue";
 
 @Component({
-    components: {GdprCookieBanner},
+    components: {Infobar, GdprCookieBanner},
 })
 export default class App extends Vue {
     search_store = search_store()
@@ -257,8 +273,30 @@ html {
     justify-content: space-between;
 }
 
-.center-img {
+.center-img, .items-center {
     display: grid;
     place-items: center;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.no-rounded-corners {
+    border-radius: 0 !important;
+}
+
+.expand_on_hover {
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+        z-index: 100;
+        cursor: pointer;
+        transform: scale(1.1);
+    }
+}
+
+.click-cursor:hover {
+    cursor: pointer;
 }
 </style>

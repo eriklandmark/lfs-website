@@ -11,6 +11,7 @@ import SearchView from "@/views/SearchView.vue";
 import {search_store} from "@/stores/search_store";
 import HistoryView from "@/views/HistoryView.vue";
 import NotAuthView from "@/views/NotAuthView.vue";
+import TeamView from "@/views/TeamView.vue";
 
 Vue.use(VueRouter)
 
@@ -29,6 +30,14 @@ const routes: Array<RouteConfig> = [
         component: AboutView,
         meta: {
             title: 'About'
+        }
+    },
+    {
+        path: '/about/:team',
+        name: 'team',
+        component: TeamView,
+        meta: {
+            title: 'Team'
         }
     },
     {
@@ -105,7 +114,9 @@ const router = new VueRouter({
 
 router.beforeEach((to, from, next) => {
     try {
-        search_store().show_search = false
+        if(to.name !== 'search') {
+            search_store().show_search = false
+        }
     } catch(e) {}
 
     next()
