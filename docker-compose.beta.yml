@@ -7,4 +7,10 @@ services:
             args:
                 - VUE_APP_ENV=beta
         ports:
-            -   "3001:3000"
+            -   "3100:3000"
+    instagram-feed-service:
+        build:
+            context: instagram-feed-service
+        env_file: instagram-feed-service/.env
+        ports:
+            - "3101:3000"
