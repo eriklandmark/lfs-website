@@ -1,18 +1,23 @@
 <template lang="pug">
     .ig_feed
-        v-dialog(v-model="dialog" max-width="65vw" max-height="400px")
+        v-dialog(v-model="dialog" max-width="1200px" max-height="400px")
             v-row.ma-0(style="background-color: #fff")
-                v-col.pa-0(sm="6")
-                    v-img(:src="selected_post.media_url" height="100%")
-                v-col.pa-0(sm="6")
-                    v-card(style="overflow: auto;" height="100%" )
+                v-col.pa-0(sm="12" md="8")
+                    v-img(v-if="selected_post.media_type === 'IMAGE'" :src="selected_post.media_url" height="100%" contain)
+                    v-carousel(v-else-if="selected_post.media_type === 'CAROUSEL_ALBUM'" hide-delimiter-background show-arrows-on-hover height="100%" )
+                        v-carousel-item(v-for="media in selected_post.children.data" :key="media.id" height="100%")
+                            v-img(:src="media.media_url" contain)
+
+                v-col.pa-0(sm="12" md="4")
+                    v-card(style="overflow: auto;" height="100%" flat)
                         v-card-title.black--text.font-weight-bold
                             v-icon(left color="red") mdi-heart
                             span {{selected_post.like_count}}
                             v-spacer
                             v-btn(icon :href="selected_post.permalink" target="_blank" x-large)
                                 v-icon(large) mdi-instagram
-                        v-card-text().black--text
+                        v-card-subtitle {{formatDate(selected_post.timestamp)}}
+                        v-card-text.black--text
                             p(v-for="text in get_paragraphs(selected_post)") {{text}}
                         v-card-actions(v-if="$vuetify.breakpoint.xs")
                             v-spacer
@@ -38,6 +43,25 @@ export default class InstagramFeed extends Vue {
     openDialog(person: any) {
         this.selected_post = person
         this.dialog = true
+    }
+
+    formatDate(timestamp: string) {
+        const now = Date.now()
+        const date = new Date(timestamp)
+        const diff = now - date.getTime()
+        if (diff < 1000 * 60 * 60) {
+            return this.$t('datetime.minutes_ago', {count: Math.floor(diff / (1000 * 60))})
+        } else if (diff < 1000 * 60 * 60 * 24) {
+            return this.$t('datetime.hours_ago', {count: Math.floor(diff / (1000 * 60 * 60))})
+        } else if (diff < 1000 * 60 * 60 * 24 * 7) {
+            return this.$t('datetime.days_ago', {count: Math.floor(diff / (1000 * 60 * 60 * 24))})
+        } else if (diff < 1000 * 60 * 60 * 24 * 30) {
+            const months = this.$t('datetime.months') as unknown as string[]
+            return `${months[date.getMonth()]} ${date.getDate()}`
+        } else {
+            const months = this.$t('datetime.months') as unknown as string[]
+            return `${months[date.getMonth()]} ${date.getDate()} ${date.getFullYear()}`
+        }
     }
 
     get_paragraphs(selected_post: any) {
