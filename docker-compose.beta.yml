@@ -1,7 +1,6 @@
 services:
     web:
         image: lfs-website:beta
-        container_name: lfs-website-beta
         build:
             context: web
             args:

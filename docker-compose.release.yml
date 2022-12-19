@@ -1,10 +1,15 @@
 services:
     web:
         image: lfs-website:release
-        container_name: lfs-website-release
         build:
-            context: .
+            context: web
             args:
                 - VUE_APP_ENV=release
         ports:
             - "3000:3000"
+    instagram-feed-service:
+        build:
+            context: instagram-feed-service
+        env_file: instagram-feed-service/.env
+        ports:
+            - "3001:3000"
