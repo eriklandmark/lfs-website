@@ -57,20 +57,21 @@
         v-container
             v-row.my-16(align="center")
                 v-col(cols="12" md="6")
-                    h1 {{$t('home.about_section.title')}}
-                    span {{$t('home.about_section.description')}}
-                    br
-                    v-btn.mt-8(color="accent" dark large to="/about") {{$t('home.read_more_text')}}
+                    h1 {{$t('home.this_is_section.title')}}
+                    span {{$t('home.this_is_section.description')}}
+                    .items-center
+                        v-btn.mt-8(color="accent" dark large to="/about") {{$t('home.read_more_text')}}
                 v-col(cols="12" md="6")
-                    v-img(src="/images/cars/car-side.svg" contain alt="Car from side." max-height="30vh")
+                    v-img(src="/images/cars/car-side.svg" contain alt="Car from side." max-height="30vh" transition="scroll-y-reverse-transition")
+            instagram-feed
             v-row.my-16(align="center")
                 v-col(cols="12" md="6")
-                    v-img(src="/images/cars/car-front.svg" contain alt="Car from the front." max-height="30vh" )
+                    v-img(src="/images/cars/car-front.svg" contain alt="Car from the front." max-height="30vh" transition="scale-transition")
                 v-col(cols="12" md="6")
                     h1 {{$t('home.contact_section.title')}}
                     span {{$t('home.contact_section.description')}}
-                    br
-                    v-btn.mt-8(color="accent" dark large to="/contact" ) {{$t('home.read_more_text')}}
+                    .items-center
+                        v-btn.mt-8(color="accent" dark large to="/contact" ) {{$t('home.read_more_text')}}
             //v-row.my-16(justify="center")
                 v-col(cols="12" md="12")
                     v-card(width="100%" )
@@ -86,9 +87,10 @@
 
 <script lang="ts">
 import {Component, Vue} from 'vue-property-decorator';
+import InstagramFeed from "@/components/InstagramFeed.vue";
 
 @Component({
-    components: {},
+    components: {InstagramFeed},
 })
 export default class HomeView extends Vue {
     carousel_model = 0;
@@ -103,9 +105,5 @@ export default class HomeView extends Vue {
     height: 100%;
     color: white;
     font-size: 4rem;
-}
-
-.no-rounded-corners {
-    border-radius: 0 !important;
 }
 </style>
