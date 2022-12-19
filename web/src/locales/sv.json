@@ -1,6 +1,7 @@
 {
     "button": {
-        "close": "Stäng"
+        "close": "Stäng",
+        "back": "Tillbaka"
     },
     "error_codes": {
         "404": {
