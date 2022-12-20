@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import VueRouter, {RouteConfig} from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
-import DevView from "@/views/Dev.vue";
 import AboutView from "@/views/AboutView.vue";
 import ContactView from "@/views/ContactView.vue";
 import PrivacyPolicyView from "@/views/PrivacyPolicyView.vue";
@@ -63,14 +62,6 @@ const routes: Array<RouteConfig> = [
         component: ContactView,
         meta: {
             title: 'Contact'
-        }
-    },
-    {
-        path: '/dev',
-        name: 'dev',
-        component: DevView,
-        meta: {
-            title: 'Dev'
         }
     },
     {
