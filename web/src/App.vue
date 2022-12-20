@@ -127,7 +127,7 @@
             v-container.mt-8
                 v-row
                     v-col(cols="12" md="3")
-                        v-img(src="/images/logos/logo-dark.png" height="80px" contain alt="Lulea Forumla Student Logo")
+                        v-img(src="/images/logos/logo-dark.png" height="80px" contain alt="Lulea Formula Student Logo")
                     v-col(cols="12" md="3")
                         h3 {{ $t("footer.contact_title") }}
                         span Mail:

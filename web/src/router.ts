@@ -131,7 +131,7 @@ router.beforeEach((to, from, next) => {
     next()
 })
 
-router.afterEach((to, from) => {
+router.afterEach((to, _) => {
     Vue.nextTick(() => {
         if (to.meta && to.meta.title) {
             document.title = to.meta.title + " - Luleå Formula Student"
