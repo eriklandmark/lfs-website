@@ -1,7 +1,7 @@
 <template lang="pug">
     .about
         v-card.no-rounded-corners(dark flat)
-            parallax(src="/images/profile_pictures/whole_team_v3.jpg" height="300" offset-y="-7vw" )
+            parallax(src="/images/profile_pictures/whole_team.avif" height="300" offset-y="-7vw" )
                 v-container(fill-height)
                     v-row()
                         v-col.center-text(cols="12" md="12")
@@ -47,7 +47,7 @@ export default class AboutView extends Vue {
             title: this.$t("about.team.board.title").toString(),
             about: this.$t("about.team.board.description").toString(),
             href: "board",
-            avatar: "/images/profile_pictures/board/board.png",
+            avatar: "/images/profile_pictures/board/board.avif",
         }
     }
 

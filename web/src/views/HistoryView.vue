@@ -32,7 +32,7 @@
                             v-card
                                 v-card-title(v-if="$vuetify.breakpoint.smAndDown") {{ $t('history.2007.title') }}
                                 v-card-text
-                                    v-img(src="/images/cars/car_2007_profile.jpg" contain alt="" max-height="250px")
+                                    v-img(src="/images/cars/car_2007_profile.avif" contain alt="" max-height="250px")
                                 v-card-text(style="color: black !important") {{ $t('history.2007.description') }}
                                 v-card-text(style="color: black !important")
                                     span.font-weight-bold {{ $t('history.car_specs.title') }}
@@ -74,7 +74,7 @@
                             v-card
                                 v-card-title(v-if="$vuetify.breakpoint.smAndDown") {{ $t('history.2005.title') }}
                                 v-card-text
-                                    v-img(src="/images/cars/car_2005_profile.jpg" contain alt="" max-height="250px")
+                                    v-img(src="/images/cars/car_2005_profile.avif" contain alt="" max-height="250px")
                                 v-card-text(style="color: black !important") {{ $t('history.2005.description') }}
                                 v-card-text(style="color: black !important")
                                     span.font-weight-bold {{ $t('history.car_specs.title') }}
