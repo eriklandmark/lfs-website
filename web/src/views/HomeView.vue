@@ -11,7 +11,7 @@
 
             v-carousel-item
                 v-card(height='100%' flat).no-rounded-corners
-                    v-img(src="/images/cars/car_2007_back_zoom.avif" height='100%')
+                    v-img(src="/images/cars/car_2007_back_zoom.avif" height='100%' eager)
                         v-sheet(style="background: rgba(3, 32, 64, 0.8)" height="100%" )
                             v-container.fill-height
                                 v-row.my-16(align="center" justify="start" )
