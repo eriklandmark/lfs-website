@@ -35,7 +35,7 @@
             v-btn.mr-2(icon @click.stop="search_store.show_search = !search_store.show_search")
                 v-icon(:color="search_store.show_search? 'accent': ''") mdi-magnify
 
-            v-menu(offset-y nudge-top="-8" transition="slide-y-transition")
+            v-menu(offset-y nudge-top="-8" transition="slide-y-transition" :style="$vuetify.breakpoint.mdAndUp? 'margin-right: 3vw':''")
                 template(v-slot:activator="{ on, attrs }")
                     v-btn(icon v-bind="attrs" v-on="on" small width="20px" height="20px" style="margin-right: 2vw")
                         v-img(v-if="language === 'en'" src="/images/flags/en_flag.png" width="24" contain alt="English")
@@ -50,7 +50,7 @@
                         v-list-item-action
                             v-img(src="/images/flags/sv_flag.png" contain alt="Swedish" width="24" height="24")
 
-            div(:style="$vuetify.breakpoint.mdAndUp? 'margin-right: 3vw':''")
+            //div(:style="$vuetify.breakpoint.mdAndUp? 'margin-right: 3vw':''")
                 v-btn(v-if="!account_store.is_logged_in" icon @click="account_store.login()")
                     v-icon mdi-account
                 v-menu(v-else offset-y nudge-top="-8" transition="slide-y-transition")
