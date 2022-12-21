@@ -54,7 +54,7 @@
         },
         "started_section": {
             "title": "Nu är vi igång!",
-            "description": "Nu har vi äntligen kommit igång och vi hoppas att ni vill vara med på vår resa! Kolla gärna in våra sociala kanaler för att hålla er uppdaterade med allt som händer i Luleå Formula Racing"
+            "description": "Nu har vi äntligen kommit igång och vi hoppas att ni vill vara med på vår resa! Kolla gärna in våra sociala kanaler för att hålla er uppdaterade med allt som händer i Luleå Formula Student"
         },
         "history_section": {
             "title": "Kolla in tidigare bilar",
@@ -100,17 +100,17 @@
                 "description": "Chassilaget jobbar med att utveckla bilens ram och strukter, även en hel del inom säkerhet och ergonomi för föraren. Chassilaget ansvarar för att bilen ska vara så stark och hållbar som möjligt samtidigt så lätt som möjligt. Chassilaget är också ansvariga för att integrera alla lagens olika komponenter i bilen för att i slutändan få byggt en bil."
             },
             "power-train": {
-                "title": "Drivlina",
-                "description": "Drivlinan är det som gör att bilen kan röra sig framåt. Drivlinan behandlar alla kompoeneter som får den lagrade energin i bilen till att generera en kraft mot vägen som får bilen att köra frammåt."
-             },
+                "title": "Powertrain",
+                "description": "Powertrain är ansvariga för kompnenter och system som gör att bilen kan röra sig framåt. Drivlinan behandlar alla kompoeneter som får den lagrade energin i bilen till att generera en kraft mot vägen som får bilen att köra frammåt."
+            },
             "vehicle-dynamics": {
                 "title": "Fordonsdynamik",
                 "description": "Fordonsdynamiklaget beaktar de dynamiska krafterna och yttre förhållandenen på bilen. Fordonsdynamiklaget ansvarar för att bilen ska kunna svänga och bromsa på ett säkert sätt. Fordonsdynamiklaget är också ansvariga för att bilen ska kunna hålla sig på vägen och inte kippa över."
-              },
+            },
             "low-voltage": {
                 "title": "Lågspänning",
                 "description": "Lågspänninglaget ansvarar för att utveckla och integrera alla elektroniska komponenter i bilen. Lågspänninglaget är också ansvariga för att bilen ska kunna kommunicera med omvärlden och för att bilen ska kunna mäta och rapportera data om bilens prestanda."
-             }
+            }
         },
         "links": {
             "title": "Läsbara länkar"
@@ -165,8 +165,8 @@
         "title": "Rekrytering",
         "description": [
             "Kul att du är intresserad av att vara med i Luleå Formula Student! I nuläget rekryterar vi inte nya medlemmar men vi vill gärna komma i kontakt med dig när vi rekryterar igen. Fyll i dina kontaktuppgifter i formuläret nedan så kontaktar vi dig när vi öppnar upp för nya medlemmar.",
-            "Till dess kan du läsa mer om föreningen och tidigare projekt och bilar som har gjorts på LTU. Om du har frågor eller funderingar är du välkommen att kontakta oss."],
-        "roll_description": "(Du kan klicka på varje roll för att komma vidare till en mer detaljerad beskrivning av rollen.)",
+            "Till dess kan du läsa mer om föreningen och tidigare projekt och bilar som har gjorts på LTU. Om du har frågor eller funderingar är du välkommen att kontakta oss."
+        ],
         "to_teams_button": "Till våra team"
     },
     "search": {

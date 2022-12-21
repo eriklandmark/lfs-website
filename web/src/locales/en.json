@@ -1,60 +1,165 @@
 {
+    "button": {
+        "close": "Close",
+        "back": "Back"
+    },
+    "datetime": {
+        "months": ["Januari", "Februari", "Mars", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+        "seconds_ago": "{count} seconds ago",
+        "minutes_ago": "{count} minutes ago",
+        "hours_ago": "{count} hours ago",
+        "days_ago": "{count} days ago"
+    },
+    "error_codes": {
+        "404": {
+            "title": "404",
+            "description": "The requested page could not be found."
+        },
+        "403": {
+            "title": "403",
+            "description": "You are not authorized to access this page. Maybe you are not logged in?"
+        }
+    },
     "main_title_tabs": {
         "home_tab": "Home",
         "about_tab": "About",
         "contact_tab": "Contact",
-        "recruitment_tab": "Recruitment"
+        "recruitment_tab": "Recruitment",
+        "about_association_tab": "About Our Organization",
+        "history_tab": "History"
     },
     "footer": {
-        "credits_title": "Credits"
+        "resources_title": "Resources",
+        "credits_title": "Credits",
+        "contact_title": "Contact"
     },
     "home": {
         "read_more_text": "Read more",
-        "about_section": {
-            "title": "About"
+        "recruit_section": {
+            "title": "Are you interested in joining?",
+            "description": "At the moment we are not recruiting new members, but if you are interested in becoming part of the journey, click the button below to submit your contact info."
+        },
+        "started_section": {
+            "title": "Now we're up and running!",
+            "description": "Now we have finally started and we hope you want to join us on our journey! Feel free to check out our social channels to keep up to date with everything happening in Luleå Formula Student"
+        },
+        "history_section": {
+            "title": "Check out the previous cars",
+            "description": "In previous years, LTU has had a racing team that competed in Formula Student for a number of years. Check out their history and learn a little more about the past cars by clicking the button below!"
+        },
+        "this_is_section": {
+            "title": "Det här är Luleå Formula Student",
+            "description": "Luleå Formula Student is a student-led organization with the ambition to lead the production and development of a formula student car. The platform creates the opportunity for engineering students to work as a team and to develop a supreme product within the automotive industry. 2022 marks the star-up of the new formula student team at Luleå University of Technology."
         },
         "contact_section": {
-            "title": "Contact us"
+            "title": "Contact us",
+            "description": "To find information on how to contact us, click the button below. We will be happy to answer and as soon as we can."
         }
     },
     "about": {
         "title": "About us",
-        "history": {
-            "title": "History"
-        },
+        "description": "Luleå Formula Student is a newly started association whose goal is to create and develop a formula car that will participate in various competitions around the world.",
         "team": {
-            "title": "Meet the teams",
+            "title": "Our teams",
             "titles": {
+                "upper_management": "Högsta Ledningen",
                 "project-leader": "Project Leader",
                 "technical-leader": "Technical Leader",
                 "team-leader": "Team Leader",
-                "team-member": "Team Member"
+                "team-member": "Team Member",
+                "hr-manager": "HR-manager",
+                "human_resources": "Human Resources"
             },
             "board": {
-                "title": "Board"
+                "title": "Board",
+                "description": "Together with the teams, the board is responsible for the organization functioning correctly and development. The management team consists of 10 people who are elected by the association's members and consists of a project leaders, 2 technical leaders, team leaders for each team as well as an HR manager. The board is responsible for the association following the statutes, laws and achieving set goals within the association. The management group is also responsible for ensuring that the association has good finances and a good financial position."
             },
             "administration": {
                 "title": "Administration",
-                "aerodynamics": {
-                    "title": "Aerodynamics"
-                },
-                "chassis": {
-                    "title": "Chassis"
-                },
-                "power-train": {
-                    "title": "Power train"
-                },
-                "vehicle-dynamics": {
-                    "title": "Vehicle dynamics"
-                },
-                "low-voltage": {
-                    "title": "Low voltage"
-                }
+                "description": "The administration team is the part of the association that works with managing the association's finances and administration. Together with the board, the administration team is the face of the association, managing PR, social media and sponsor contact. Administration is also responsible for planning and implementing the association's events. Even if the administration team is not working on any development of the car, they are extremely important for the association to function."
+            },
+            "aerodynamics": {
+                "title": "Aerodynamics",
+                "description": "The aerodynamics team is responsible for ensuring that the flowing air around the car can be used in the best way. For example, how air can be used to improve the ability to turn in tight curves and how air can be used to cool hot components in the car."
+            },
+            "chassis": {
+                "title": "Chassis",
+                "description": "The chassis team works on developing the car's frame and structures, also responsible for safety and ergonomics for the driver. The chassis team is responsible for the car being as strong and durable as possible while also being as light as possible. The chassis team is also responsible for integrating all the teams' different components into the car to ultimately build a car."
+            },
+            "power-train": {
+                "title": "Power train",
+                "description": "Powertrain is responsible for the components and systems that enable the car to move forward. The Power train team handles all the components that cause the stored energy in the car to generate a force against the road that makes the car drive forward."
+            },
+            "vehicle-dynamics": {
+                "title": "Vehicle dynamics",
+                "description": "The vehicle dynamics team considers the dynamic forces from external conditions of the car. The vehicle dynamics team is responsible for the car being able to turn and brake safely, also responsible for the car being able to stay on the road and not tip over."
+            },
+            "low-voltage": {
+                "title": "Low voltage",
+                "description": "The low voltage team is responsible for developing and integrating all electronic components in the car. The low voltage team is also responsible for the car being able to communicate with the outside world and for the car to be able to measure and report data about the car's performance."
             }
+        },
+        "links": {
+            "title": "Readable links"
+        }
+    },
+    "history": {
+        "title": "Our History",
+        "description": "",
+        "earlier_cars": {
+            "title": "Cars from previous years",
+            "description": "LTU has in previous years competed in Formula Student. Then the project was carried out by students through being one of the SIRIUS projects for the final year students for mechanical engineering and a group of students from systems science. Here you can read more about the cars that have competed in previous years."
+        },
+        "car_specs": {
+            "title": "Car specifications:",
+            "weight": "Weight: {weight} kg",
+            "engine": "Engine: {engine}",
+            "hp": "Horsepower: {hp} hp",
+            "power": "Power: {power} kW",
+            "torque": "Torque: {torque} Nm",
+            "zeroToHundred": "0-100 km/h: {zeroToHundred} sekunder",
+            "topSpeed": "Top speed: {topSpeed} km/h"
+        },
+        "2005": {
+            "title": "2005",
+            "description": "The car from the year 2005 is probably the oldest of the cars that are still around today even in almost drivable condition."
+        },
+        "2006": {
+            "title": "2006",
+            "description": "In 2006, the car of the year from LTU came 13th out of 59 competing teams at the competition in Silverstone, England."
+        },
+        "2007": {
+            "title": "2007",
+            "description": "In 2007, the previous car was reused and built on and improved. The picture shows the latest and last edition of LTU's participation in Formula Student when the project was discontinued in 2008. This car is still there today and is on display in the E-Huset at LTU."
+        },
+        "2022_summer": {
+            "title": "Sommaren 2022",
+            "description": "Before the summer, a group of students felt that it was sad that there was no formula car project at LTU. That's why they decided to start a new project association and now we're up and running."
+        },
+        "2022_autumn": {
+            "title": "Hösten 2022",
+            "description": "During the autumn, the association was created and at the first annual meeting a new board of 8 members was voted in and with the help of 24 members they will now develop and develop a car that will compete in Formula Student."
         }
     },
     "contact": {
         "reach_us": "You can reach us at",
-        "social_media": "Social media"
+        "social_media": "Social media",
+        "contact_board": "Contact someone on the board",
+        "email": "E-mail: ",
+        "phone-number": "Phone number: "
+    },
+    "recruitment": {
+        "title": "Recruitment",
+        "description": [
+            "Great that you are interested in being part of Luleå Formula Student! At the moment we are not recruiting new members, but we would like to get in touch with you when we recruit again. Fill in your contact details in the form below and we will contact you when we open up for new members.",
+            "Until then, you can read more about the association and previous projects and cars that have been made at LTU. If you have any questions or concerns, please contact us."
+        ],
+        "to_teams_button": "To our teams"
+    },
+    "search": {
+        "title": "Search",
+        "placeholder": "Search for something...",
+        "no_results": "No results were found",
+        "description": "Found {count} results for {query} in {time} seconds."
     }
 }
