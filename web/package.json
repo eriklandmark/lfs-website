@@ -10,7 +10,7 @@
         "docker:build:release": "docker build -t eriklandmark/lfs-website:release . && docker push eriklandmark/lfs-website:release",
         "docker:build:beta": "docker build -t eriklandmark/lfs-website:beta . && docker push eriklandmark/lfs-website:beta",
         "prod": "serve",
-        "i18n:report": "vue-cli-service i18n:report --src \"./src/**/*.?(js|vue)\" --locales \"./src/locales/**/*.json\""
+        "i18n:report": "vue-cli-service i18n:report --src \"./src/**/*.?(js|vue|ts)\" --locales \"./src/locales/**/*.json\""
     },
     "dependencies": {
         "@babel/polyfill": "^7.12.1",
