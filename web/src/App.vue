@@ -158,6 +158,7 @@ import GdprCookieBanner from "@/components/GdprCookieBanner.vue";
 import {search_store} from "@/stores/search_store";
 import {account_store} from "@/stores/account_store";
 import Infobar from "@/components/Infobar.vue";
+import CookiesHandler from "@/lib/CookiesHandler";
 
 @Component({
     components: {Infobar, GdprCookieBanner},
@@ -191,6 +192,10 @@ export default class App extends Vue {
         return process.env.VUE_APP_VERSION
     }
 
+    created() {
+        this.language = CookiesHandler.getCookie('language') || 'sv';
+    }
+
     beforeMount() {
         if (this.$route.path === '/search') {
             this.search_store.show_search = true
@@ -204,6 +209,7 @@ export default class App extends Vue {
     @Watch('language')
     onLanguageChanged() {
         this.$i18n.locale = this.language;
+        CookiesHandler.setCookie('language', this.language, 365)
     }
 
     do_search() {
