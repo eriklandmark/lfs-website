@@ -11,6 +11,7 @@
 
 <script lang="ts">
 import {Component, Vue} from 'vue-property-decorator';
+import CookiesHandler from "@/lib/CookiesHandler";
 
 @Component({
     components: {},
@@ -21,13 +22,13 @@ export default class GdprCookieBanner extends Vue {
     beforeMount() {
         const is_bot = /bot|google|baidu|bing|msn|teoma|slurp|yandex/i.test(navigator.userAgent)
 
-        if (this.getCookie('analytics-tracking') == null
+        if (CookiesHandler.getCookie('analytics-tracking') == null
             && process.env.NODE_ENV === 'production'
             && process.env.hasOwnProperty("VUE_APP_ENV")
             && process.env.VUE_APP_ENV === "release"
             && !is_bot ) {
             this.show = true;
-        } else if (this.getCookie('analytics-tracking') == "true") {
+        } else if (CookiesHandler.getCookie('analytics-tracking') == "true") {
             this.$gtag.optIn()
         }
     }
@@ -36,36 +37,13 @@ export default class GdprCookieBanner extends Vue {
         this.show = false
         this.$gtag.optIn()
         this.$gtag.event('accept_gdpr')
-        this.setCookie('analytics-tracking','true',30)
+        CookiesHandler.setCookie('analytics-tracking','true',30)
     }
 
     deny() {
         this.show = false
         this.$gtag.optOut()
-        this.setCookie('analytics-tracking', 'false', 30)
-    }
-
-    setCookie(cname: string, cvalue: string, exdays: number) {
-        const d = new Date();
-        d.setTime(d.getTime() + (exdays*24*60*60*1000));
-        let expires = "expires="+ d.toUTCString();
-        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-    }
-
-    getCookie(cname: string) {
-        let name = cname + "=";
-        let decodedCookie = decodeURIComponent(document.cookie);
-        let ca = decodedCookie.split(';');
-        for(let i = 0; i <ca.length; i++) {
-            let c = ca[i];
-            while (c.charAt(0) == ' ') {
-                c = c.substring(1);
-            }
-            if (c.indexOf(name) == 0) {
-                return c.substring(name.length, c.length);
-            }
-        }
-        return null;
+        CookiesHandler.setCookie('analytics-tracking', 'false', 30)
     }
 }
 </script>
