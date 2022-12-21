@@ -63,7 +63,9 @@ export default class TeamView extends Vue {
         if(team.href == "board") {
             return team.members
         } else {
-            return [this.mtt_data[0].members.find((member: any) => member.hasOwnProperty("team") && member.team === team.href), ...team.members]
+            const team_leader = this.mtt_data[0].members.find((member: any) => member.hasOwnProperty("team") && member.team === team.href)!
+            team_leader.title = <string> this.$t('about.team.titles.team-leader')
+            return [team_leader, ...team.members]
         }
     }
 
