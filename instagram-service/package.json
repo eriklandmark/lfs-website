@@ -1,11 +1,11 @@
 {
-    "name": "instagram-feed-service",
+    "name": "instagram-service",
     "version": "1.0.0",
-    "description": "Instagram Feed Service for LFS Website",
+    "description": "Instagram Service for LFS Website",
     "main": "index.js",
     "scripts": {
-        "dev": "dotenv -- ts-node instagram-feed-service.ts",
-        "prod": "ts-node instagram-feed-service.ts"
+        "dev": "dotenv -- ts-node instagram-service.ts",
+        "prod": "ts-node instagram-service.ts"
     },
     "author": "",
     "license": "ISC",

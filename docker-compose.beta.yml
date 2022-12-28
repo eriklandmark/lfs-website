@@ -9,7 +9,7 @@ services:
             -   "3100:3000"
     instagram-feed-service:
         build:
-            context: instagram-feed-service
-        env_file: instagram-feed-service/.env
+            context: instagram-service
+        env_file: instagram-service/.env
         ports:
             - "3101:3000"
