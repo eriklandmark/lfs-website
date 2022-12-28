@@ -22,7 +22,10 @@
                         v-card-actions(v-if="$vuetify.breakpoint.xs")
                             v-spacer
                             v-btn(color="primary" @click="dialog = false" text) {{$t('button.close')}}
-                            
+
+        v-row
+            v-col
+                h1 {{$t('home.instagram_feed.title')}}
         v-row.pa-3(justify="center")
             v-col.pa-0.click-cursor(v-for="post in feed" :key="post.id" cols="6" sm="3" md="3" lg="3" xl="3" @click="openDialog(post)")
                 v-img(:src="post.media_url" :alt="post.caption" height="100%" )

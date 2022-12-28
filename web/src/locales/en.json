@@ -35,6 +35,9 @@
     },
     "home": {
         "read_more_text": "Read more",
+        "instagram_feed": {
+            "title": "Follow us on @luleaformulastudent"
+        },
         "recruit_section": {
             "title": "Are you interested in joining?",
             "description": "At the moment we are not recruiting new members, but if you are interested in becoming part of the journey, click the button below to submit your contact info."

@@ -48,6 +48,9 @@
     },
     "home": {
         "read_more_text": "Läs mer",
+        "instagram_feed": {
+            "title": "Följ oss på @luleaformulastudent"
+        },
         "recruit_section": {
             "title": "Är du intresserad av att vara med?",
             "description": "I nuläget rekryterar vi inte nya medlemmar men om du är intresserad av att bli en del utav föreningen, klicka på knappen nedan för att skicka in en intresseanmälan."
