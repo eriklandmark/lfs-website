@@ -1,11 +1,16 @@
 <template lang="pug">
     v-snackbar(multi-line v-model='show' color="white" light bottom timeout="-1")
         v-card(flat)
-            v-card-title Vi använder kakor
-            v-card-text.text--black Vi använder analytiska kakor för att förstå hur besökare interagerar med webbplatsen. Dessa cookies hjälper till att ge information om mätvärden som antalet besökare, avvisningsfrekvens, trafikkälla, etc.
-        template(v-slot:action='{ attrs }')
-            v-btn(text='' v-bind='attrs' @click="deny") Neka
-            v-btn.mx-8(color='accent' dark v-bind='attrs' @click="accept") Gå vidare
+            v-card-title {{ $t("cookie_banner.title") }}
+            v-card-text.text--black {{ $t("cookie_banner.description") }}
+                router-link(to="/privacy-policy") {{ $t("cookie_banner.learn_more") }}.
+            v-card-actions(v-if="!$vuetify.breakpoint.mdAndUp")
+                v-spacer
+                v-btn(text @click="deny") {{ $t("cookie_banner.deny") }}
+                v-btn.ml-6(color='accent' dark @click="accept") {{ $t("cookie_banner.accept") }}
+        template(v-if="$vuetify.breakpoint.mdAndUp" v-slot:action='{ attrs }')
+            v-btn(text='' v-bind='attrs' @click="deny") {{ $t("cookie_banner.deny") }}
+            v-btn.mx-6(color='accent' dark v-bind='attrs' @click="accept") {{ $t("cookie_banner.accept") }}
 
 </template>
 
@@ -13,9 +18,7 @@
 import {Component, Vue} from 'vue-property-decorator';
 import CookiesHandler from "@/lib/CookiesHandler";
 
-@Component({
-    components: {},
-})
+@Component({})
 export default class GdprCookieBanner extends Vue {
     show = false;
 
@@ -47,7 +50,3 @@ export default class GdprCookieBanner extends Vue {
     }
 }
 </script>
-
-<style lang="scss">
-
-</style>
