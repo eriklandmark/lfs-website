@@ -76,7 +76,7 @@ export default class InstagramFeed extends Vue {
     }
 
     async mounted() {
-        const url = process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : "/api/v1/instagram_feed"
+        const url = process.env.NODE_ENV === 'development' ? 'http://localhost:3000/feed' : "/api/v1/instagram/feed"
         this.feed = (await fetch(url).then(res => res.json())).business_discovery.media.data.slice(0, 8)
     }
 }
