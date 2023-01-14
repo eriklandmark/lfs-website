@@ -1,0 +1,25 @@
+{
+    "name": "google-service",
+    "version": "1.0.0",
+    "description": "Google Service for LFS Website",
+    "main": "index.js",
+    "scripts": {
+        "dev": "dotenv -- ts-node-dev google-service.ts",
+        "prod": "ts-node google-service.ts"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@types/cors": "^2.8.13",
+        "@types/express": "^4.17.15",
+        "cors": "^2.8.5",
+        "dotenv": "^16.0.3",
+        "dotenv-cli": "^6.0.0",
+        "express": "^4.18.2",
+        "firebase-admin": "^11.4.1",
+        "googleapis": "^110.0.0",
+        "node-fetch": "^2.6.1",
+        "ts-node": "^10.9.1",
+        "ts-node-dev": "^2.0.0"
+    }
+}
