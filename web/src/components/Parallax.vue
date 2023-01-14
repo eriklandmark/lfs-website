@@ -6,7 +6,6 @@
 
 <script lang="ts">
 import {Component, Prop, Vue} from 'vue-property-decorator';
-import {infobar_store} from "@/stores/infobar_store";
 
 @Component({
     components: {},

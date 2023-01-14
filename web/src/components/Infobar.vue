@@ -9,13 +9,13 @@
 
 <script lang="ts">
 import {Component, Vue} from 'vue-property-decorator';
-import {infobar_store} from "@/stores/infobar_store";
+import {useInfoBarStore} from "@/stores/infobar_store";
 
 @Component({
     components: {},
 })
 export default class Infobar extends Vue {
-    infobar_store = infobar_store()
+    infobar_store = useInfoBarStore()
 }
 </script>
 
