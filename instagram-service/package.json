@@ -4,7 +4,7 @@
     "description": "Instagram Service for LFS Website",
     "main": "index.js",
     "scripts": {
-        "dev": "dotenv -- ts-node instagram-service.ts",
+        "dev": "dotenv -- ts-node-dev instagram-service.ts",
         "prod": "ts-node instagram-service.ts"
     },
     "author": "",
@@ -17,6 +17,7 @@
         "dotenv-cli": "^6.0.0",
         "express": "^4.18.2",
         "node-fetch": "^2.6.1",
-        "ts-node": "^10.9.1"
+        "ts-node": "^10.9.1",
+        "ts-node-dev": "^2.0.0"
     }
 }
