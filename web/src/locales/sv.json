@@ -1,7 +1,15 @@
 {
     "button": {
         "close": "Stäng",
-        "back": "Tillbaka"
+        "back": "Tillbaka",
+        "reload": "Ladda om",
+        "cancel": "Avbryt",
+        "save": "Spara",
+        "toggle": "Växla",
+        "delete": "Ta bort"
+    },
+    "dropdown": {
+        "all": "Allt"
     },
     "datetime": {
         "months": [
@@ -33,13 +41,25 @@
             "description": "Du har inte behörighet att komma åt den här sidan. Du kanske inte är inloggad?"
         }
     },
+    "cookie_banner": {
+        "title": "Vi använder cookies",
+        "description": "Denna webbplats använder cookies för att förbättra din upplevelse. Läs mer om hur vi använder cookies ",
+        "deny": "Neka",
+        "accept": "Gå vidare",
+        "learn_more": "här"
+    },
+    "uid_dialog": {
+        "title": "Ditt UID:"
+    },
     "main_title_tabs": {
         "home_tab": "Hem",
         "about_tab": "Om",
         "contact_tab": "Kontakt",
         "recruitment_tab": "Rekrytering",
         "about_association_tab": "Om Föreningen",
-        "history_tab": "Historia"
+        "history_tab": "Historia",
+        "uid_button": "Visa UID",
+        "logout_button": "Logga ut"
     },
     "footer": {
         "resources_title": "Resurser",
@@ -85,34 +105,6 @@
                 "team-member": "Lagmedlem",
                 "hr-manager": "HR-ansvarig",
                 "human_resources": "Personalansvarig"
-            },
-            "board": {
-                "title": "Ledningsgruppen",
-                "description": "Tillsammans med lagen ansvarar ledningsgruppen för att föreningen ska fungera och utvecklas. Ledningsgruppen består av 10 personer som är valda av föreningens medlemmar och består av en projektledare, 2 st teknikledare och lagledare för varje lag samt HR-ansvarig. Ledningsgruppen ansvarar för att föreningen följer stadgarna, lagar och når uppsatta mål inom föreningen. Ledningsgruppen är också ansvarig för att föreningen har en god ekonomi och en god ekonomisk ställning."
-            },
-            "administration": {
-                "title": "Administration",
-                "description": "Administrationen är en del av föreningen som arbetar med att sköte föreningens ekonomi och administration. Tillsammans med styrelsen är administrationslaget ansiktet utåt för föreningen, sköter PR, sociala medier och sponsorkontakt. Administration är också ansvariga för att planera och genomföra föreningens evenemang. Även om inte administrationslaget jobbar på någon utveckling av bilen är de yttersviktiga för att föreningen ska fungera."
-            },
-            "aerodynamics": {
-                "title": "Aerodynamik",
-                "description": "Aerodynamiklaget ansvarar över lag för strömmande luft runt bilen kan nyttjas på bästa sätt. Exempelvis hur man kan använda luft för att förbättra förmågan att svänga i tajta kurvor och hur luft kan användas för att kyla för varma komponenter i bilen."
-            },
-            "chassis": {
-                "title": "Chassi",
-                "description": "Chassilaget jobbar med att utveckla bilens ram och strukter, även en hel del inom säkerhet och ergonomi för föraren. Chassilaget ansvarar för att bilen ska vara så stark och hållbar som möjligt samtidigt så lätt som möjligt. Chassilaget är också ansvariga för att integrera alla lagens olika komponenter i bilen för att i slutändan få byggt en bil."
-            },
-            "power-train": {
-                "title": "Powertrain",
-                "description": "Powertrain är ansvariga för kompnenter och system som gör att bilen kan röra sig framåt. Drivlinan behandlar alla kompoeneter som får den lagrade energin i bilen till att generera en kraft mot vägen som får bilen att köra frammåt."
-            },
-            "vehicle-dynamics": {
-                "title": "Fordonsdynamik",
-                "description": "Fordonsdynamiklaget beaktar de dynamiska krafterna och yttre förhållandenen på bilen. Fordonsdynamiklaget ansvarar för att bilen ska kunna svänga och bromsa på ett säkert sätt. Fordonsdynamiklaget är också ansvariga för att bilen ska kunna hålla sig på vägen och inte kippa över."
-            },
-            "low-voltage": {
-                "title": "Lågspänning",
-                "description": "Lågspänninglaget ansvarar för att utveckla och integrera alla elektroniska komponenter i bilen. Lågspänninglaget är också ansvariga för att bilen ska kunna kommunicera med omvärlden och för att bilen ska kunna mäta och rapportera data om bilens prestanda."
             }
         },
         "links": {
@@ -177,5 +169,63 @@
         "placeholder": "Sök efter något...",
         "no_results": "Inga resultat hittades",
         "description": "Hittade {count} resultat för {query} på {time} sekunder."
+    },
+    "admin": {
+        "nav": {
+            "home": "Hem",
+            "statistics": "Statistik",
+            "org": {
+                "title": "Organisation",
+                "members_title": "Medlemmar",
+                "teams_title": "Lag"
+            }
+        },
+        "home": {
+            "title": "Hem",
+            "description": "Välkommen till adminpanelen för Luleå Formula Student. Här kan du hantera medlemmar, lagen och annat som har med föreningen att göra.",
+            "members_count": "Antal medlemmar",
+            "teams_count": "Antal lag"
+        },
+        "members": {
+            "title": "Medlemmar",
+            "description": "Här kan du hantera medlemmar i föreningen. lägga till beskrivning, namn och bilder på medlemmarna.",
+            "edit_member": "Redigera",
+            "name": "Namn",
+            "email": "E-post",
+            "member_title": "Titel",
+            "select_title": "Välj titel",
+            "upload_picture": "Ladda upp bild",
+            "linked_in_link": "LinkedIn-länk"
+        },
+        "teams": {
+            "title": "Våra lag",
+            "description": "Här kan du hantera våra lag, lägga till beskrivning, namn och bilder på våra lag.",
+            "name": "Namn",
+            "email": "E-post",
+            "number_of_members": "Antal medlemmar"
+        },
+        "statistics": {
+            "title": "Statistik",
+            "description": "Här kan du se statistik över föreningen.",
+            "members_count": "Medlemmar",
+            "teams_count": "Lag",
+            "follower_count_last_week": "Nya följare",
+            "profile_views_last_week": "Profilvisningar",
+            "reach_last_week": "Reach",
+            "followers": "Antal följare",
+            "new_followers_last_week": "Nya följare den här veckan",
+            "views_by_country": "Visningar per land",
+            "google_search": {
+                "total_clicks": "Klickningar",
+                "total_clicks_desc": "Klickningar till hemsidan från sökningar.",
+                "total_impressions": "Exponeringar",
+                "total_impressions_desc": "Antal visningar i sökresultatet.",
+                "total_ctr": "CTR",
+                "total_ctr_desc": "Click Through Rate",
+                "average_position": "Position",
+                "average_position_desc": "Genomsnittlig position på sökresultatet.",
+                "chart_title": "Google Search - Sökdata"
+            }
+        }
     }
 }

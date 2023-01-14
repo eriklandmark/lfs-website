@@ -55,7 +55,7 @@
                                 br
                                 span(style="float:left") {{$t('contact.email')}}
                                 a.ml-1(:href="'mailto:' + member.email" style="float: right") {{member.email}}
-                            template(v-if="member.phonenumber")
+                            template(v-if="member['phonenumber']")
                                 br
                                 span(style="float:left") {{$t('contact.phone-number')}}
                                 a.ml-1(:href="'tel:' + member.phonenumber" style="float: right") {{member.phonenumber}}
@@ -63,22 +63,40 @@
 
 <script lang="ts">
 import {Component, Vue} from 'vue-property-decorator';
-import organization_data from "@/assets/organization_data";
 
 @Component({
     components: {},
 })
 export default class ContactView extends Vue {
 
-    board_filter = [
-        "Jacob Höglund",
-        "Erik Landmark",
-        "Max Wiberg",
-        "Sannah Engelin"
-    ]
-
     get board() {
-        return organization_data()[0].members.filter((member: any) => this.board_filter.includes(member.name))
+        return  [
+            {
+                name: "Jacob Höglund",
+                title: this.$tc('about.team.titles.project-leader', 0),
+                email: "jacob.hoglund@luleafs.se"
+            },
+            {
+                name: "Erik Landmark",
+                title: this.$tc('about.team.titles.technical-leader', 0),
+                email: "erik.landmkark@luleafs.se"
+            },
+            {
+                name: "Samuel Höglund",
+                title: this.$tc('about.team.titles.technical-leader', 0),
+                email: "samuel.hoglund@luleafs.se"
+            },
+            {
+                name: "Max Wiberg",
+                title: this.$tc('about.team.titles.team-leader', 0) + ", Admin",
+                email: "max.wiberg@luleafs.se"
+            },
+            {
+                name: "Sannah Engelin",
+                title: this.$tc('about.team.titles.hr-manager', 0),
+                email: "sannah.engelin@luleafs.se"
+            }
+        ]
     }
 }
 </script>

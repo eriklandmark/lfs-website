@@ -7,9 +7,17 @@ services:
                 - VUE_APP_ENV=release
         ports:
             - "3000:3000"
-    instagram-feed-service:
+        depends_on:
+            -   instagram-service
+    instagram-service:
         build:
             context: instagram-service
         env_file: instagram-service/.env
         ports:
             - "3001:3000"
+    google-service:
+        build:
+            context: google-service
+        env_file: google-service/.env
+        ports:
+            - "3102:3001"

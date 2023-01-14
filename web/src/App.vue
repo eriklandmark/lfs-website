@@ -1,12 +1,21 @@
 <template lang="pug">
     v-app
+        v-dialog(v-model="showUidDialog" width="310px" )
+            v-card
+                v-card-title {{ $t("uid_dialog.title") }}
+                v-card-text
+                    pre.uid-code {{ account_store.uid }}
+                v-card-actions
+                    v-spacer
+                    v-btn.ml-6(text @click="showUidDialog = false") {{ $t("button.cancel") }}
         v-app-bar(app
             color="white"
             :height="$vuetify.breakpoint.mdAndUp? 100:56"
             :extension-height="search_store.show_search ? 100 : 0"
             extension-transition="fade-transition"
             v-click-outside="closeSearch"
-            :extended="search_store.show_search")
+            :extended="search_store.show_search"
+            style="z-index:1000")
             v-app-bar-nav-icon(@click="drawer = !drawer" v-if="$vuetify.breakpoint.smAndDown")
                 v-icon mdi-menu
             v-img.logo(src="/images/logos/logo-light.png"
@@ -59,8 +68,16 @@
                             v-avatar(size="24")
                                 v-img(:src="account_store.account.photoURL" contain alt="Profile picture")
                     v-list.pa-0
-                        v-list-item(@click="account_store.logout()")
-                            v-list-item-title Logga ut
+                        v-list-item(v-if="account_store.is_admin" to="/admin/home")
+                            v-list-item-title Admin
+                            v-list-item-action
+                                v-icon mdi-account-cog
+                        v-list-item(@click="showUidDialog = true")
+                            v-list-item-title {{ $t("main_title_tabs.uid_button") }}
+                            v-list-item-action
+                                v-icon mdi-account-cog
+                        v-list-item(@click="account_store.logout().then(() => $router.push('/'))")
+                            v-list-item-title {{ $t("main_title_tabs.logout_button") }}
                             v-list-item-action
                                 v-icon mdi-logout
 
@@ -154,7 +171,7 @@
 
 <script lang="ts">
 import {Component, Vue, Watch} from 'vue-property-decorator';
-import GdprCookieBanner from "@/components/GdprCookieBanner.vue";
+import GdprCookieBanner from "@/components/CookieBanner.vue";
 import {search_store} from "@/stores/search_store";
 import {account_store} from "@/stores/account_store";
 import Infobar from "@/components/Infobar.vue";
@@ -166,12 +183,12 @@ import CookiesHandler from "@/lib/CookiesHandler";
 export default class App extends Vue {
     search_store = search_store()
     account_store = account_store()
-
     drawer = false;
     search = '';
     language = 'sv';
     searchInvoked = false;
     tab = 0;
+    showUidDialog = false;
 
     @Watch('search_store.show_search')
     onSearchShowChange() {
@@ -193,6 +210,7 @@ export default class App extends Vue {
     }
 
     created() {
+        account_store().init()
         this.language = CookiesHandler.getCookie('language') || 'sv';
     }
 
@@ -224,13 +242,9 @@ export default class App extends Vue {
 </script>
 
 <style lang="scss">
-
-$body-font-family: 'Raleway', sans-serif;
-
 html {
     min-height: 100vh;
     overflow: auto !important;
-    font-family: "Raleway", sans-serif !important;
 }
 
 .app-bar-menu {
@@ -255,10 +269,6 @@ html {
 }
 
 .v-application {
-    [class*='text-'], [class*='font-'] {
-        font-family: $body-font-family, sans-serif !important;
-    }
-
     .font-weight-bold {
         font-weight: 700 !important;
     }
@@ -266,8 +276,6 @@ html {
     .font-weight-regular {
         font-weight: 400 !important;
     }
-
-    font-family: $body-font-family, sans-serif !important;
 }
 
 .app-bar-cont {
@@ -283,7 +291,7 @@ html {
 }
 
 .center-text {
-    text-align: center;
+    text-align: center !important;
 }
 
 .no-rounded-corners {
@@ -302,5 +310,12 @@ html {
 
 .click-cursor:hover {
     cursor: pointer;
+}
+
+.uid-code {
+    background: rgba(0,0,0,0.1);
+    border-radius: 8px;
+    color: black;
+    padding: 20px;
 }
 </style>
