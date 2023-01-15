@@ -24,7 +24,7 @@ export const account_store = defineStore('accountStore', {
             return state.account != null
         },
         account_api_href: (_) => {
-            return process.env.NODE_ENV === 'production' ? '/api/1.0/google-services/' : 'http://localhost:3001/'
+            return process.env.NODE_ENV === 'production' ? '/api/v1/google-services/' : 'http://localhost:3001/'
         }
     },
     actions: {
